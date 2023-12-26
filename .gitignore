@@ -1,0 +1,17 @@
+# open-meteo
+open-meteo/__pycache__/
+open-meteo/scripts/.cache.sqlite
+open-meteo/.cache.sqlite
+*.pyc
+
+# weather-air-insights
+weather-air-insights/target/
+weather-air-insights/metastore_db/
+weather-air-insights/.bsp/
+weather-air-insights/.idea/
+weather-air-insights/project/project/
+weather-air-insights/project/target/
+weather-air-insights/derby.log
+
+# data
+data/
