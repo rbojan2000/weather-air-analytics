@@ -5,6 +5,7 @@ import org.apache.spark.sql.types._
 object Weather {
   val schema: StructType = StructType(
     Array(
+      StructField("id", IntegerType, nullable = true),
       StructField("date", TimestampType, nullable = true),
       StructField("weather_code", DoubleType, nullable = true),
       StructField("temperature_2m_max", DoubleType, nullable = true),
