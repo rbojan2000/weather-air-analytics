@@ -2,7 +2,7 @@ package jobs
 
 import config.AppConfig
 import io.delta.tables.DeltaTable
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{SaveMode, SparkSession}
 import org.apache.spark.sql.functions.lit
 import org.apache.spark.sql.types.StructType
 
@@ -25,6 +25,7 @@ object ConvertHistoricalDataToDelta {
     }
 
     val filteredDF = processRawDataFrame(rawDF, dataSchema, city)
+
     val deltaTable = DeltaTable.forPath(spark, getDeltaTablePath(dType))
 
     deltaTable
@@ -74,10 +75,14 @@ object ConvertHistoricalDataToDelta {
   }
 
   private def getColumnMapping(schema: org.apache.spark.sql.types.StructType, alias: String): Map[String, String] = {
-    schema
+    val stringToString = schema
       .fieldNames
       .map(colName => colName -> s"$alias.$colName")
       .toMap
+      .+("city" -> s"$alias.city")
+
+    println(stringToString)
+    stringToString
   }
 }
 
