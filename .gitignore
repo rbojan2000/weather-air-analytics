@@ -20,5 +20,12 @@ streams-insights/.idea/
 streams-insights/target/
 streams-insights/derby.log/
 
+**/target/
+**/idea/
+**/bsp/
+**/metastore_db/
+
+
+
 # data
 data/
