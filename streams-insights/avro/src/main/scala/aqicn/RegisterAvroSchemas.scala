@@ -1,4 +1,4 @@
-package aqicn.avro
+package aqicn
 
 import com.typesafe.scalalogging.LazyLogging
 import io.circe.generic.auto._
