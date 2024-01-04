@@ -9,9 +9,16 @@ weather-air-insights/target/
 weather-air-insights/metastore_db/
 weather-air-insights/.bsp/
 weather-air-insights/.idea/
-weather-air-insights/project/project/
 weather-air-insights/project/target/
 weather-air-insights/derby.log
+
+# streams-insights
+streams-insights/project/target/
+streams-insights/metastore_db/
+streams-insights/.bsp/
+streams-insights/.idea/
+streams-insights/target/
+streams-insights/derby.log/
 
 # data
 data/
