@@ -6,7 +6,7 @@ import au.com.bytecode.opencsv.CSVReader
 import java.io.FileReader
 
 object CsvReader {
-   def readCities(filePath: String): Seq[City] = {
+  def readCities(filePath: String): Seq[City] = {
     val reader = new CSVReader(new FileReader(filePath))
     var csvData: Seq[City] = Seq()
 

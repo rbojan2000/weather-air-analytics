@@ -15,10 +15,13 @@ object Configuration {
 
   val kafkaProducerAcks: String = config.getString("kafka.producer.acks")
   val kafkaProducerAppID: String = config.getString("kafka.producer.app-id")
+  val kafkaProducerSleepTime: Int = config.getInt(  "kafka.producer.sleep-time-ms")
+  val kafkaProducerCitiesParts: Int = config.getInt("kafka.producer.cities-parts")
 
   val kafkaAirQualityAnalyzerAppID: String = config.getString("kafka.air-quality-analyzer.app-id")
 
   val kafkaAirQualityTopic: String = config.getString("kafka.topics.air-quality")
+  val kafkaCitiesTopic: String = config.getString("kafka.topics.cities")
 
   //csv
   val europeanCitiesPath: String = config.getString("csv.cities")

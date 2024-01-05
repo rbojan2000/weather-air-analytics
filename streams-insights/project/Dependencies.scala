@@ -18,6 +18,7 @@ object Dependencies {
     val akkaStream = "2.7.0"
     val playJson = "2.10.0"
     val openCsv = "2.3"
+    val picocliVersion = "4.6.3"
   }
 
   object Libs {
@@ -44,5 +45,6 @@ object Dependencies {
     val akkaStream = "com.typesafe.akka" %% "akka-stream" % V.akkaStream
     val playJson = "com.typesafe.play" %% "play-json" % V.playJson
     val openCsv = "net.sf.opencsv" % "opencsv" % V.openCsv
+    val picocli = "info.picocli" % "picocli" % V.picocliVersion
   }
 }

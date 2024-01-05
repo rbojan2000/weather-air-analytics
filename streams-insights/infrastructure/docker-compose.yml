@@ -32,6 +32,7 @@ services:
       - broker
     command: "bash -c 'echo Waiting for Kafka to be ready... && \
                        cub kafka-ready -b broker:29092 1 20 && \
+                       kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.air.quality && \
                        kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.air.quality '"
   schema-registry:
     image: confluentinc/cp-schema-registry:7.3.0

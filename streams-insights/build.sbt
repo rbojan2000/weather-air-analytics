@@ -1,4 +1,4 @@
-import Dependencies._
+import Dependencies.*
 
 name := "streams-insights"
 version := "0.1"
@@ -14,7 +14,7 @@ lazy val producer = (project in file("producer"))
   .settings(commonSettings)
   .settings(
     name := "aqicn-air-quality-producer",
-    libraryDependencies ++= Seq(Libs.kafkaClient, Libs.kafkaAvro, Libs.catsEffect, Libs.sl4j, Libs.logback, Libs.scalaLogging, Libs.akkaStream, Libs.playJson, Libs.openCsv)
+    libraryDependencies ++= Seq(Libs.kafkaClient, Libs.kafkaAvro, Libs.catsEffect, Libs.sl4j, Libs.logback, Libs.scalaLogging, Libs.akkaStream, Libs.playJson, Libs.openCsv, Libs.picocli)
   )
   .dependsOn(domain, avro)
 

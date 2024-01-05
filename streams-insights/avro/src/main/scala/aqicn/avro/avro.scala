@@ -18,4 +18,9 @@ package object avro {
   implicit val airQualityIdRF: KeyRecordFormat[AirQualityId] = RecordFormat[AirQualityId].taggedWith[KeyRFTag]
   implicit val airQualityValueRF: ValueRecordFormat[AirQualityValue] = RecordFormat[AirQualityValue].taggedWith[ValueRFTag]
 
+  val cityIdSchema: Schema = AvroSchema[CityId]
+  val cityValueSchema: Schema = AvroSchema[City]
+
+  implicit val cityIdRF: KeyRecordFormat[CityId] = RecordFormat[CityId].taggedWith[KeyRFTag]
+  implicit val cityValueSchemaRF: ValueRecordFormat[City] = RecordFormat[City].taggedWith[ValueRFTag]
 }
