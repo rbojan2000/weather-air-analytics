@@ -6,8 +6,8 @@ services:
       - "9090:8080"
       - "7077:7077"
     volumes:
-       - ../weather-air-insights:/opt/spark-apps
-       - ../data:/opt/spark-data
+       - ../../weather-air-insights:/opt/app
+       - ../../data:/opt/data
     environment:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master

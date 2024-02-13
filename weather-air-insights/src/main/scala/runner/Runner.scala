@@ -9,7 +9,6 @@ object Runner {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder()
-      .appName("WeatherAirInsights")
       .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
       .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
       .getOrCreate()

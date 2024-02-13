@@ -3,7 +3,7 @@ package aqicn
 package object domain {
   case class AirQualityId(city: String)
 
-  case class CityId(id: Int)
+  case class CityId(name: String)
 
   case class Iaqi(
                    co: Option[Double],

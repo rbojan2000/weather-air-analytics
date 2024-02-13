@@ -36,7 +36,7 @@ object AqicnProducer extends IOApp with LazyLogging with Engine {
           .make(IO(new KafkaProducer[IndexedRecord, IndexedRecord](props.asJava)))(p => IO(logger.info("closing producer...")) *> IO(p.close()))
           .use { producer =>
             Seq(
-              IO(cities.map(city => CityId(city.id) -> city)).flatMap(send(producer)(Configuration.kafkaCitiesTopic, _))
+              IO(cities.map(city => CityId(city.name) -> city)).flatMap(send(producer)(Configuration.kafkaCitiesTopic, _))
             ).parSequence_.as(ExitCode.Success)
           }
 
