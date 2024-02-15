@@ -1,6 +1,6 @@
 package aqicn.utils
 
-import aqicn.domain.City
+import aqicn.avro.message.City
 import au.com.bytecode.opencsv.CSVReader
 
 import java.io.FileReader

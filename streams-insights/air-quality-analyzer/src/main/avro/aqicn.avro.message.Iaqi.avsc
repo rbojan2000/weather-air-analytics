@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "Iaqi",
+  "namespace": "aqicn.avro.message",
+  "fields": [
+    { "name": "co", "type": ["null", "double"], "default": null },
+    { "name": "h", "type": ["null", "double"], "default": null },
+    { "name": "no2", "type": ["null", "double"], "default": null },
+    { "name": "o3", "type": ["null", "double"], "default": null },
+    { "name": "p", "type": ["null", "double"], "default": null },
+    { "name": "pm10", "type": ["null", "double"], "default": null },
+    { "name": "pm25", "type": ["null", "double"], "default": null },
+    { "name": "so2", "type": ["null", "double"], "default": null }
+  ]
+}

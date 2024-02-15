@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "City",
+  "namespace": "aqicn.avro.message",
+  "fields": [
+    { "name": "id", "type": "int" },
+    { "name": "lat", "type": "string" },
+    { "name": "lon", "type": "string" },
+    { "name": "name", "type": "string" },
+    { "name": "country", "type": "string" },
+    { "name": "population", "type": "long" }
+  ]
+}

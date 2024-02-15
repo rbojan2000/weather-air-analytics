@@ -1,6 +1,6 @@
 package aqicn.decoder
 
-import aqicn.domain.{AirQualityValue, City, Iaqi}
+import aqicn.avro.message.{AirQuality, City, Iaqi}
 import com.typesafe.scalalogging.LazyLogging
 import org.slf4j.MarkerFactory
 import play.api.libs.json._
@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter
 
 trait Decoder extends LazyLogging {
 
-  def decodeAirQuality(encodedAirQuality: String, city: City): AirQualityValue = {
+  def decodeAirQuality(encodedAirQuality: String, city: City): AirQuality = {
     try {
       val json = Json.parse(encodedAirQuality)
 
@@ -22,7 +22,7 @@ trait Decoder extends LazyLogging {
       val (url, stationName) = parseAttributions(json \ "data")
       val stmTimestamp = parseTimestamp(json \ "data", city: City)
 
-      AirQualityValue(url = url, stationName = stationName, dominentPol = dominentPol, aqi = aqi, index = idx, STM = stmTimestamp, iaqi = aqiData, city = city)
+      AirQuality(url = url, stationName = stationName, dominentPol = dominentPol, aqi = aqi, index = idx, STM = stmTimestamp, iaqi = aqiData, city = city)
     } catch {
       case e: Exception =>
         logger.warn(MarkerFactory.getMarker("SPECIAL"), s"Error decoding air quality for city ${city.name}: ", e)

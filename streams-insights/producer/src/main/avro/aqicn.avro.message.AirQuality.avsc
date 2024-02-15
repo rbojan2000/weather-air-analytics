@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "AirQuality",
+  "namespace": "aqicn.avro.message",
+  "fields": [
+    { "name": "url", "type": "string" },
+    { "name": "stationName", "type": "string" },
+    { "name": "dominentPol", "type": "string" },
+    { "name": "aqi", "type": ["null", "int"], "default": null },
+    { "name": "index", "type": "int" },
+    { "name": "STM", "type": ["null", "long"], "default": null },
+    { "name": "iaqi", "type": "Iaqi" },
+    { "name": "city", "type": "City" }
+  ]
+}
