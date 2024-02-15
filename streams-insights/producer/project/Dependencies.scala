@@ -2,7 +2,6 @@ import sbt._
 
 object Dependencies {
 
-
   object V {
     val sttp3 = "3.3.11"
     val kafkaStreams = "3.3.1"

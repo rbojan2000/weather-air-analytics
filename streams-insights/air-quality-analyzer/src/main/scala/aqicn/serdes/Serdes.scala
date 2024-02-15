@@ -1,13 +1,11 @@
 package aqicn.serdes
 
-import aqicn.domain.CityAqiInfo
-import aqicn.domain.CountryAirQualityMetrics
-import com.sksamuel.avro4s.BinaryFormat
-import com.sksamuel.avro4s.kafka.GenericSerde
+import aqicn.avro.message.{AirQuality, City, Iaqi}
+import aqicn.utils.AvroSupport
+import org.apache.kafka.common.serialization.Serde
 
-trait Serdes {
-
-  implicit val cityAqiInfoSerde: GenericSerde[CityAqiInfo] = new GenericSerde[CityAqiInfo](BinaryFormat)
-  implicit val countryAqiInfoKpiSerde: GenericSerde[CountryAirQualityMetrics] = new GenericSerde[CountryAirQualityMetrics](BinaryFormat)
-
+trait Serdes extends AvroSupport {
+  implicit val airQualitySerde: Serde[AirQuality] = avroSerde()
+  implicit val citySerde: Serde[City] = avroSerde()
+  implicit val iaqiSerde: Serde[Iaqi] = avroSerde()
 }
