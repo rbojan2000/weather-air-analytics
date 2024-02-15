@@ -8,6 +8,7 @@ open-meteo/.cache.sqlite
 **/target/
 **/.idea/
 **/bsp/
+**/.bsp/
 **/metastore_db/
 
 

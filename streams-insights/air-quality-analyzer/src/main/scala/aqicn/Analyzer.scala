@@ -1,6 +1,7 @@
 package aqicn
 
 import aqicn.config.Configuration
+import aqicn.topology.TopologyBuilder
 import com.typesafe.scalalogging.LazyLogging
 import org.apache.kafka.streams.KafkaStreams
 import org.apache.kafka.streams.StreamsConfig.{APPLICATION_ID_CONFIG, BOOTSTRAP_SERVERS_CONFIG}
@@ -16,7 +17,9 @@ object Analyzer extends App with LazyLogging {
 
   val topology = TopologyBuilder.apply().build
 
-  logger.info(topology.describe().toString)
+  logger.info("##########################")
+  println(topology.describe().toString)
+  logger.info("##########################")
   val app = new KafkaStreams(topology, props)
 
   app.start()

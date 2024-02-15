@@ -35,4 +35,39 @@ package object domain {
                    country: String,
                    population: Long
                  )
+
+  case class CityAqiInfo(
+                          url: String,
+                          stationName: String,
+                          dominentPol: String,
+                          aqiValue: Option[Int],
+                          index: Int,
+                          STM: Option[Long],
+                          co: Option[Double],
+                          h: Option[Double],
+                          no2: Option[Double],
+                          o3: Option[Double],
+                          p: Option[Double],
+                          pm10: Option[Double],
+                          pm25: Option[Double],
+                          so2: Option[Double],
+                          lat: String,
+                          lon: String,
+                          name: String,
+                          country: String,
+                          population: Long
+                        ) {
+  }
+
+  case class CountryAirQualityMetrics(
+                                       country: String,
+                                       cityWithHighestPM10: String,
+                                       cityWithHighestPM25: String,
+                                       cityWithHighestAqi: String,
+                                       aqiValue: Int,
+                                       dominantPollutant: String,
+                                       dominantPollutantInCountry: String,
+                                       averageCountryAqi: Long
+                                     )
+
 }

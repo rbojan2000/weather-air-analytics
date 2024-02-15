@@ -1,12 +1,12 @@
-package aqicn
+package aqicn.avro
 
-import aqicn.avro.{KeyRecordFormat, ValueRecordFormat}
+import aqicn.config.Configuration
 import com.sksamuel.avro4s.RecordFormat
 import io.confluent.kafka.streams.serdes.avro.GenericAvroSerde
 import org.apache.avro.generic.GenericRecord
 import org.apache.kafka.common.serialization.Serde
 import org.apache.kafka.streams.scala.serialization.Serdes
-import aqicn.config.Configuration
+
 import scala.jdk.CollectionConverters._
 
 object AvroSerdes {
