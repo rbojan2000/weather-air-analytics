@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "CityMetric",
+  "namespace": "aqicn.avro.message",
+  "fields": [
+    {"name": "cityName", "type": "string"},
+    {"name": "value", "type": "double"},
+    {"name": "pollutant", "type": "string"},
+    {"name": "stationName", "type": "string"}
+  ]
+}

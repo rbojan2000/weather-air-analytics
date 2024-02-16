@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "CountryAirQualityMetrics",
+  "namespace": "aqicn.avro.message",
+  "fields": [
+    {"name": "country", "type": "string"},
+    {"name": "cityWithHighestPM10", "type": "CityMetric"},
+    {"name": "cityWithHighestPM25", "type": "CityMetric"},
+    {"name": "cityWithHighestAqi", "type": "CityMetric"},
+    {"name": "dominantPollutantInCountry", "type": "string"},
+    {"name": "averageCountryAqi", "type": "long"},
+    {"name": "numberOfCitiesWithHazardousAirPollutantLevel", "type": "int"},
+    {"name": "numberOfCitiesWithUnhealthyPollutantLevel", "type": "int"}
+  ]
+}

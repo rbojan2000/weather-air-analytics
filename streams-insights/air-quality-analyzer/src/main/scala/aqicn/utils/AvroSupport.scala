@@ -18,6 +18,4 @@ trait AvroSupport {
     serde.configure(serdeConfig.asJava, isKey)
     serde
   }
-
 }
-

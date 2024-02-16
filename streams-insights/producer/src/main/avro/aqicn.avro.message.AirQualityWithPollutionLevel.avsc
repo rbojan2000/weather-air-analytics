@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "AirQualityWithPollutionLevel",
+  "namespace": "aqicn.avro.message",
+  "fields": [
+    { "name": "url", "type": "string" },
+    { "name": "stationName", "type": "string" },
+    { "name": "dominentPol", "type": "string" },
+    { "name": "aqi", "type": ["null", "int"], "default": null },
+    { "name": "index", "type": "int" },
+    { "name": "STM", "type": ["null", "long"], "default": null },
+    { "name": "iaqi", "type": "Iaqi" },
+    { "name": "city", "type": "City" },
+    { "name": "airPollutantLevel", "type": "string", "doc": "The air pollutant level in the city", "symbols": ["Good", "Moderate", "UnhealthyForSensitiveGroups", "Unhealthy", "VeryUnhealthy", "Hazardous"] }
+  ]
+}

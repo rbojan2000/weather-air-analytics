@@ -11,6 +11,9 @@ object Configuration {
 
   val airQualityTopic: String = config.getString("kafka.topics.air-quality")
   val citiesTopic: String = config.getString("kafka.topics.cities")
+  val cityairpollutantTopic: String = config.getString("kafka.topics.city-air-pollutant")
+
+  val windowDuration: Int = config.getInt("kafka.sliding-windows-duration-mins")
 
   val appId: String = config.getString("air-quality-analyzer.app-id")
 

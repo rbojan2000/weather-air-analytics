@@ -1,0 +1,27 @@
+{
+  "type": "record",
+  "name": "CityAqiInfo",
+  "namespace": "aqicn.avro.message",
+  "fields": [
+    { "name": "airPollutantLevel", "type": "string", "doc": "The air pollutant level in the city", "symbols": ["Good", "Moderate", "UnhealthyForSensitiveGroups", "Unhealthy", "VeryUnhealthy", "Hazardous"] },
+    {"name": "url", "type": "string"},
+    {"name": "stationName", "type": "string"},
+    {"name": "dominentPol", "type": "string"},
+    {"name": "aqiValue", "type": ["int", "null"]},
+    {"name": "index", "type": "int"},
+    {"name": "STM", "type": ["long", "null"]},
+    {"name": "co", "type": ["double", "null"]},
+    {"name": "h", "type": ["double", "null"]},
+    {"name": "no2", "type": ["double", "null"]},
+    {"name": "o3", "type": ["double", "null"]},
+    {"name": "p", "type": ["double", "null"]},
+    {"name": "pm10", "type": ["double", "null"]},
+    {"name": "pm25", "type": ["double", "null"]},
+    {"name": "so2", "type": ["double", "null"]},
+    {"name": "lat", "type": "string"},
+    {"name": "lon", "type": "string"},
+    {"name": "name", "type": "string"},
+    {"name": "country", "type": "string"},
+    {"name": "population", "type": "long"}
+  ]
+}
