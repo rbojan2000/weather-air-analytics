@@ -12,7 +12,7 @@ import org.apache.kafka.streams.scala.ImplicitConversions._
 import org.apache.kafka.streams.scala.StreamsBuilder
 import org.apache.kafka.streams.scala.kstream._
 import org.apache.kafka.streams.scala.serialization.Serdes._
-import org.apache.kafka.streams.kstream.{GlobalKTable, SlidingWindows, Windowed}
+import org.apache.kafka.streams.kstream.{GlobalKTable, Named, SlidingWindows, Windowed}
 
 import java.time.Duration
 
@@ -29,8 +29,8 @@ case class TopologyBuilder() extends Serdes
     val airQualityStream: KStream[String, AirQuality] = builder.stream[String, AirQuality](Configuration.airQualityTopic)
     val citiesGlobalTable: GlobalKTable[String, City] = builder.globalTable[String, City](Configuration.citiesTopic)
 
-
     val cityWithAirPollutantLevelStream: KStream[String, AirQualityWithPollutionLevel] = airQualityStream
+      .filter((_, v) => v.aqi.isDefined)
       .mapValues(
         mapToCityAirPollutantLevel
       )
@@ -43,19 +43,33 @@ case class TopologyBuilder() extends Serdes
         (key, _) => key,
         joinAqiWithCity
       )
+      .peek((k, v) =>
+        logger.whenDebugEnabled {
+          logger.debug(s"Enriched air quality {city: $k} with: $v")
+        }
+      )
 
     val airQualityWithCityGroupedStream: KGroupedStream[String, CityAqiInfo] =
       airQualityWithCityStream
         .groupBy((_, value) => value.country)(Grouped.`with`(stringSerde, cityAqiInfoSerde))
-    
+
     val windowedCountryAirQualityMetrics: KTable[Windowed[String], CountryAirQualityMetrics] = airQualityWithCityGroupedStream
       .windowedBy(SlidingWindows.ofTimeDifferenceWithNoGrace(Duration.ofMinutes(Configuration.windowDuration)))
       .aggregate(
-        initializer = CountryAirQualityMetrics(country = "", cityWithHighestPM10 = CityMetric(cityName = "", value = 0, pollutant = "", stationName = ""), cityWithHighestPM25 = CityMetric(cityName = "", value = 0, pollutant = "", stationName = ""), cityWithHighestAqi = ???, dominantPollutantInCountry = ???, averageCountryAqi = ???, numberOfCitiesWithHazardousAirPollutantLevel = ???, numberOfCitiesWithUnhealthyPollutantLevel = ???)
+        initializer = CountryAirQualityMetrics("", CityMetric("", 1, "", ""), CityMetric("", 1, "", ""), CityMetric("", 1, "", ""), "", Map.empty, 0, 0)
       )(
         aggregate
       )(Materialized.`with`(stringSerde, countryAirQualityMetricsSerde))
 
+
+    windowedCountryAirQualityMetrics
+      .toStream(Named.as("processed-country-air-quality-metrics"))
+      .selectKey((window, value) => value.country)
+      .peek((k, v) =>
+        logger.whenDebugEnabled {
+          logger.debug(s"Country metrics {window: $k} metric: $v")
+        })
+      .to(Configuration.countryAqiMetricsTopic)
 
     builder.build()
   }

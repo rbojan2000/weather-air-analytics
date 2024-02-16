@@ -12,6 +12,7 @@ object Configuration {
   val airQualityTopic: String = config.getString("kafka.topics.air-quality")
   val citiesTopic: String = config.getString("kafka.topics.cities")
   val cityairpollutantTopic: String = config.getString("kafka.topics.city-air-pollutant")
+  val countryAqiMetricsTopic: String = config.getString("kafka.topics.country-air-quality-metrics")
 
   val windowDuration: Int = config.getInt("kafka.sliding-windows-duration-mins")
 

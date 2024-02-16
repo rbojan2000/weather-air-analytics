@@ -33,6 +33,7 @@ trait AirQualityPollutantLevelMapper {
         else if (value >= airPollutantLevelLimits.unhealthyForSensitiveGroups.highLimit) AirPollutionLevel.UnhealthyForSensitiveGroups.toString
         else if (value >= airPollutantLevelLimits.moderate.highLimit) AirPollutionLevel.Moderate.toString
         else AirPollutionLevel.Good.toString
+
     }
   }
 }
