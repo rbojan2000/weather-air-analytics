@@ -1,5 +1,0 @@
-java -jar air-quality-analyzer/target/scala-2.13/air-quality-analyzer-0.1.0-SNAPSHOT.jar
-sbt "project producer" "run ede1ba751854e4afbbfa2b7620fc3f44629c237d air-quality"
-
-root@ba0315ab21db:/opt/app# /opt/spark/bin/spark-submit  --class runner.Runner --packages io.delta:delta-spark_2.12:3.0.0 target/scala-2.12/weather-insights-assembly-1.0.jar findTop10CitiesByAvgPollutantSpecie pm10 "2023-05-01 00:00:00" "2023-09-01 00:00:00"
-
