@@ -8,6 +8,7 @@ import aqicn.utils.CsvReader
 import picocli.CommandLine
 import picocli.CommandLine.{Command, Option}
 
+import java.nio.file.Paths
 import java.util.concurrent.Callable
 
 @Command(

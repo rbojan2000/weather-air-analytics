@@ -25,7 +25,7 @@ lazy val root = (project in file("."))
       Libs.sttp3Circe,
       Libs.sttp3Core
     ),
-    Compile / sourceGenerators += (Compile / avroScalaGenerateSpecific).taskValue,
+//    Compile / sourceGenerators += (Compile / avroScalaGenerateSpecific).taskValue,
     assembly / assemblyMergeStrategy := {
       case PathList("META-INF", xs @ _*) =>
         xs map {

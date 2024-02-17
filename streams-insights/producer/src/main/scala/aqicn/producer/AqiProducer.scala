@@ -17,6 +17,7 @@ case class AqiProducer(api: Api)(implicit cities: Seq[City]) extends Producer
         val airQuality = api.getAirQualityByCity(city)
         sendAqiMessage(airQuality)
       }
+      Thread.sleep(Configuration.sleepTime)
     }
 
   def sendAqiMessage(aqi: AirQuality): Unit = {
