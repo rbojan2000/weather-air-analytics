@@ -4,11 +4,11 @@ import config.AppConfig
 import io.delta.tables.DeltaTable
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.StructType
-import utils.DeltaConversionUtils._
+import utils.DeltaConversionUtils
 
-object ConvertHistoricalDataToDelta {
+trait ConvertToDelta extends DeltaConversionUtils{
 
-  def run(
+  def ConvertHistoricalDataToDelta(
            spark: SparkSession,
            city: String,
            dType: String,
@@ -39,10 +39,7 @@ object ConvertHistoricalDataToDelta {
       .execute()
   }
 
-}
-
-object ConvertAllToDelta {
-  def run(spark: SparkSession, dType: String, startDate: String, endDate: String): Unit = {
+  def ConvertAllToDelta(spark: SparkSession, dType: String, startDate: String, endDate: String): Unit = {
     val cities = spark
       .read
       .option("delimiter", ",")
@@ -52,7 +49,7 @@ object ConvertAllToDelta {
     cities.collect().foreach { row =>
       val cityName = row.getAs[String]("city")
 
-      ConvertHistoricalDataToDelta.run(spark, cityName, dType, startDate, endDate)
+      ConvertHistoricalDataToDelta(spark, cityName, dType, startDate, endDate)
     }
   }
 }

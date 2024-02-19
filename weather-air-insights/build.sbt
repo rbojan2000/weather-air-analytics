@@ -10,9 +10,19 @@ lazy val commonSettings = Seq(
 lazy val root = (project in file("."))
   .settings(commonSettings)
   .settings(
-    libraryDependencies ++= Seq(Libs.deltaIceberg, Libs.deltaSpark, Libs.scalaParserCombinators, Libs.sparkSql, Libs.config),
-    Compile / mainClass := Some("runner.Runner"),
-    assembly / mainClass := Some("runner.Runner"),
+    libraryDependencies ++= Seq(
+      Libs.deltaIceberg,
+      Libs.deltaSpark,
+      Libs.scalaParserCombinators,
+      Libs.sparkSql,
+      Libs.config,
+      Libs.scalaLogging,
+      Libs.picocli,
+      Libs.scalaLogging,
+      Libs.logback
+  ),
+    Compile / mainClass := Some("Runner"),
+    assembly / mainClass := Some("Runner"),
     assembly / assemblyMergeStrategy := {
       case PathList("META-INF", xs@_*) =>
         xs map {

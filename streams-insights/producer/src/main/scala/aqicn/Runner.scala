@@ -12,7 +12,7 @@ import java.nio.file.Paths
 import java.util.concurrent.Callable
 
 @Command(
-  name = "checksum",
+  name = "producer",
   mixinStandardHelpOptions = true,
   version = Array("1.0"),
   description = Array("Produce aqicn or cities data.")

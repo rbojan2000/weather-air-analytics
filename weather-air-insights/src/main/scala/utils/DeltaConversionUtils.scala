@@ -1,12 +1,13 @@
 package utils
 
+import com.typesafe.scalalogging.LazyLogging
 import config.AppConfig
 import io.delta.tables.DeltaTable
 import org.apache.spark.sql.functions.lit
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
-object DeltaConversionUtils {
+trait DeltaConversionUtils extends LazyLogging{
   def saveTableIfNotExist(spark: SparkSession, data: DataFrame, dType: String): Unit = {
     if (!DeltaTable.isDeltaTable(spark, getDeltaTablePath(dType))) {
       data
