@@ -7,8 +7,9 @@ import org.apache.spark.sql.functions.lit
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
-trait DeltaConversionUtils extends LazyLogging{
-  def saveTableIfNotExist(spark: SparkSession, data: DataFrame, dType: String): Unit = {
+trait DeltaConversion extends LazyLogging {
+  def saveTableIfNotExist(data: DataFrame, dType: String)
+                         (implicit spark: SparkSession): Unit = {
     if (!DeltaTable.isDeltaTable(spark, getDeltaTablePath(dType))) {
       data
         .write
@@ -20,7 +21,17 @@ trait DeltaConversionUtils extends LazyLogging{
     }
   }
 
-  def readCsv(spark: SparkSession, path: String, schema: org.apache.spark.sql.types.StructType): DataFrame = {
+  def getDeltaTablePath(dType: String): String = {
+    if (dType.contains("air")) {
+      AppConfig.deltaAirQuality
+    } else {
+      AppConfig.deltaWeather
+    }
+  }
+
+  def readCsv(path: String,
+              schema: org.apache.spark.sql.types.StructType)
+             (implicit spark: SparkSession): DataFrame = {
     spark.read
       .option("delimiter", ",")
       .option("header", "true")
@@ -35,14 +46,6 @@ trait DeltaConversionUtils extends LazyLogging{
         "all",
         schema.fieldNames.filterNot(colName => colName == "id" || colName == "date")
       )
-  }
-
-  def getDeltaTablePath(dType: String): String = {
-    if (dType.contains("air")) {
-      AppConfig.deltaAirQuality
-    } else {
-      AppConfig.deltaWeather
-    }
   }
 
   def getSchema(dType: String): StructType = {

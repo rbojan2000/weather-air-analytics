@@ -71,7 +71,7 @@ class Runner extends Callable[Int]
   }
 
   private def run(): Unit = {
-    val spark = SparkSession
+    implicit val spark: SparkSession = SparkSession
       .builder()
       .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
       .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
@@ -80,7 +80,6 @@ class Runner extends Callable[Int]
     job match {
       case "convert-to-delta" =>
         ConvertHistoricalDataToDelta(
-          spark,
           city,
           dataType,
           startDate,
@@ -89,7 +88,6 @@ class Runner extends Callable[Int]
 
       case "convert-all-to-delta" =>
         ConvertAllToDelta(
-          spark,
           dataType,
           startDate,
           endDate
@@ -97,10 +95,14 @@ class Runner extends Callable[Int]
 
       case "find-top10-cities-by-avg-pollutant-specie" =>
         FindTop10CitiesByAvgPollutantSpecie(
-          spark,
           pollutant,
           Timestamp.valueOf(startDate),
           Timestamp.valueOf(endDate)
+        )
+
+      case "daily-average-polluyion" =>
+        calculateDailyAveragePollution(
+          pollutant
         )
 
       case _ =>
