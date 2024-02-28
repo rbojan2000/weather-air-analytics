@@ -11,7 +11,40 @@ import java.sql.Timestamp
 
 trait Analytics extends LazyLogging {
 
-    def rankPollutantConcentrationByHour(pollutant: String)
+  def windSpeedPollutantRatio(pollutant: String)
+                             (implicit spark: SparkSession): DataFrame = {
+
+    val weatherDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaWeather).toDF
+      .withColumn("date", to_date(col("date")))
+
+    val dailyAirQuality: DataFrame = getDailyAirPollutantConcetrations()
+
+    weatherDF.show()
+    dailyAirQuality.show()
+    val weatherAndAirQualityData: DataFrame = dailyAirQuality.join(weatherDF, Seq("city", "date"), "inner")
+
+    weatherAndAirQualityData.show(10)
+
+    val window: WindowSpec = Window
+      .partitionBy(col("date"))
+      .rowsBetween(-2, 0)
+
+    val windSpeedPollutantRatioDF = weatherAndAirQualityData
+      .withColumn("avg_wind_speed_3d",
+        avg("wind_speed_10m").over(window))
+      .withColumn(s"avg_${pollutant}_concetration",
+        avg(s"avg($pollutant)").over(window))
+      .withColumn("wind_speed_pollutant_ratio",
+        col("avg_wind_speed_3d") / col(s"avg_${pollutant}_concetration"))
+
+    windSpeedPollutantRatioDF
+      .select("date", "city", "avg_wind_speed_3d", "wind_speed_10m", s"avg_${pollutant}_concetration", s"avg($pollutant)", "wind_speed_pollutant_ratio", "avg_wind_speed_3d")
+      .show(300)
+
+    windSpeedPollutantRatioDF
+  }
+
+  def rankPollutantConcentrationByHour(pollutant: String)
                                       (implicit spark: SparkSession): DataFrame = {
 
     val airQualityDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaAirQuality).toDF
@@ -71,7 +104,7 @@ trait Analytics extends LazyLogging {
     val weatherDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaWeather).toDF
     val dailyAirQuality: DataFrame = getDailyAirPollutantConcetrations()
 
-    val weatherAndAirQualityData: DataFrame = dailyAirQuality.join(weatherDF, Seq("city"), "inner")
+    val weatherAndAirQualityData: DataFrame = dailyAirQuality.join(weatherDF, Seq("city", "date"), "inner")
 
     val correlation: Double = weatherAndAirQualityData.stat.corr(s"avg($airPollutant)", weatherParam)
 

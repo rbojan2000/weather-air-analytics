@@ -3,7 +3,7 @@ import Dependencies.*
 lazy val commonSettings = Seq(
   scalaVersion := "2.12.15",
   resolvers += "Confluent Maven Repository" at "https://packages.confluent.io/maven/",
-  name := "analytics",
+  name := "air-meteo-insights",
   version := "0.1"
 )
 

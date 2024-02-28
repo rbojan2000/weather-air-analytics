@@ -9,7 +9,7 @@ import java.util.concurrent.Callable
 import java.sql.Timestamp
 
 @Command(
-  name = "weather-air-insights",
+  name = "air-meteo-insights",
   mixinStandardHelpOptions = true,
   version = Array("1.0"),
   description = Array("Run weather and air quality analytics jobs.")
@@ -118,6 +118,9 @@ class Runner extends Callable[Int]
 
       case "correlation-between-air-quality-and-weather" =>
         correlationBetweenAirQualityAndWeather(pollutant, weatherParam)
+
+      case "wind-speed-pollutant-ratio" =>
+        windSpeedPollutantRatio(pollutant)
 
       case _ =>
         println("Invalid job option.")
