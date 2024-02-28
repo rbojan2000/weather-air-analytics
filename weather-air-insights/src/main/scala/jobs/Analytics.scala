@@ -3,19 +3,18 @@ package jobs
 import com.typesafe.scalalogging.LazyLogging
 import config.AppConfig
 import io.delta.tables.DeltaTable
-import org.apache.spark.sql.{DataFrame, SparkSession, functions}
+import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.expressions.{Window, WindowSpec}
-import org.apache.spark.sql.functions.{avg, col, min, max, rank, to_date, to_timestamp}
+import org.apache.spark.sql.functions.{avg, col, max, min, rank, to_date}
 
 import java.sql.Timestamp
 
 trait Analytics extends LazyLogging {
 
-  def rankPollutantConcentrationByHour(pollutant: String)
-                                      (implicit spark: SparkSession,
-                                       showRowNum: Int): DataFrame = {
+    def rankPollutantConcentrationByHour(pollutant: String)
+                                      (implicit spark: SparkSession): DataFrame = {
 
-    val airQualityDF = DeltaTable.forPath(spark, AppConfig.deltaAirQuality).toDF
+    val airQualityDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaAirQuality).toDF
 
     val hourlyWindow: WindowSpec = Window
       .partitionBy("date")
@@ -31,14 +30,13 @@ trait Analytics extends LazyLogging {
 
     hourlyPollutantConcentrationRank
       .select("date", "city", pollutant, s"hourlyMax${pollutant.capitalize}", s"hourlyMin${pollutant.capitalize}", "rank")
-      .show(numRows = showRowNum)
+      .show(numRows = 300)
 
     hourlyPollutantConcentrationRank
   }
 
   def hourlyPollutantMaximumAndAverage(pollutant: String)
-                                      (implicit spark: SparkSession,
-                                       showRowNum: Int): DataFrame = {
+                                      (implicit spark: SparkSession): DataFrame = {
 
     val airQualityDF = DeltaTable.forPath(spark, AppConfig.deltaAirQuality).toDF
 
@@ -62,17 +60,30 @@ trait Analytics extends LazyLogging {
 
     hourlyMeasurmentDiffFromAvgAndMax
       .select("date", "city", pollutant, s"hourly_max_${pollutant}", s"hourly_avg_${pollutant}", s"current_dif_${pollutant}_from_avg", s"current_dif_${pollutant}_from_max")
-      .show(numRows = showRowNum)
-
+      .show(numRows = 300)
 
     hourlyMeasurmentDiffFromAvgAndMax
+  }
+
+  def correlationBetweenAirQualityAndWeather(airPollutant: String, weatherParam: String)
+                                            (implicit spark: SparkSession): Double = {
+
+    val weatherDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaWeather).toDF
+    val dailyAirQuality: DataFrame = getDailyAirPollutantConcetrations()
+
+    val weatherAndAirQualityData: DataFrame = dailyAirQuality.join(weatherDF, Seq("city"), "inner")
+
+    val correlation: Double = weatherAndAirQualityData.stat.corr(s"avg($airPollutant)", weatherParam)
+
+    logger.info(s"callculated correlation: {$correlation}")
+
+    correlation
   }
 
   def findTop10CitiesByAvgPollutantSpecie(pollutant: String,
                                           startDate: Timestamp,
                                           endDate: Timestamp)
-                                         (implicit spark: SparkSession,
-                                          showRowNum: Int): Unit = {
+                                         (implicit spark: SparkSession): Unit = {
     val deltaTable = DeltaTable.forPath(spark, AppConfig.deltaAirQuality)
 
     deltaTable.toDF
@@ -81,6 +92,35 @@ trait Analytics extends LazyLogging {
       .agg(avg(col(pollutant)).as("avgPoll"))
       .orderBy("avgPoll")
       .limit(10)
-      .show(numRows = showRowNum)
+      .show(numRows = 300)
+  }
+
+  private def getDailyAirPollutantConcetrations()(implicit spark: SparkSession): DataFrame = {
+
+    val airQualityDF = DeltaTable.forPath(spark, AppConfig.deltaAirQuality)
+      .toDF
+      .withColumn("date", to_date(col("date")))
+
+    airQualityDF
+      .groupBy("date", "city")
+      .agg(
+        avg("pm10"),
+        avg("pm2_5"),
+        avg("carbon_monoxide"),
+        avg("nitrogen_dioxide"),
+        avg("sulphur_dioxide"),
+        avg("ozone"),
+        avg("aerosol_optical_depth"),
+        avg("dust"),
+        avg("uv_index"),
+        avg("uv_index_clear_sky"),
+        avg("ammonia"),
+        avg("alder_pollen"),
+        avg("birch_pollen"),
+        avg("grass_pollen"),
+        avg("mugwort_pollen"),
+        avg("olive_pollen"),
+        avg("ragweed_pollen")
+      )
   }
 }

@@ -66,19 +66,26 @@ class Runner extends Callable[Int]
   )
   private var pollutant: String = ""
 
+  @Option(
+    names = Array("-wp", "--weather-param"),
+    description = Array("Name of the weather param."),
+    required = false
+  )
+  private var weatherParam: String = ""
+
   override def call(): Int = {
     run()
     0
   }
 
   private def run(): Unit = {
+    implicit val showRowNum: Integer = AppConfig.showRowNum
+
     implicit val spark: SparkSession = SparkSession
       .builder()
       .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
       .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
       .getOrCreate()
-
-    implicit val showRowNum: Integer = AppConfig.showRowNum
 
     job match {
       case "convert-to-delta" =>
@@ -108,6 +115,9 @@ class Runner extends Callable[Int]
 
       case "hourly-pollutant-cities-rank-by-max-pollutant-concetration" =>
         rankPollutantConcentrationByHour(pollutant)
+
+      case "correlation-between-air-quality-and-weather" =>
+        correlationBetweenAirQualityAndWeather(pollutant, weatherParam)
 
       case _ =>
         println("Invalid job option.")
