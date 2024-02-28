@@ -9,4 +9,6 @@ object AppConfig {
   val deltaAirQuality: String = config.getString("delta.air_quality")
   val deltaWeather: String = config.getString("delta.weather")
   val europeanCitiesCsvPath: String = config.getString("european_cities_csv_path")
+  val showRowNum: Int = config.getInt("showRowNum")
+
 }

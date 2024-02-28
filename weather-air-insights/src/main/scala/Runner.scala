@@ -1,4 +1,5 @@
 import com.typesafe.scalalogging.LazyLogging
+import config.AppConfig
 import jobs.{Analytics, ConvertToDelta}
 import org.apache.spark.sql.SparkSession
 import picocli.CommandLine
@@ -77,6 +78,8 @@ class Runner extends Callable[Int]
       .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
       .getOrCreate()
 
+    implicit val showRowNum: Integer = AppConfig.showRowNum
+
     job match {
       case "convert-to-delta" =>
         convertHistoricalDataToDelta(
@@ -101,7 +104,10 @@ class Runner extends Callable[Int]
         )
 
       case "hourly-pollutant-metrics" =>
-        hourlyPollutantMetrics(pollutant)
+        hourlyPollutantMaximumAndAverage(pollutant)
+
+      case "hourly-pollutant-cities-rank-by-max-pollutant-concetration" =>
+        rankPollutantConcentrationByHour(pollutant)
 
       case _ =>
         println("Invalid job option.")
