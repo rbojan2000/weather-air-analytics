@@ -79,7 +79,7 @@ class Runner extends Callable[Int]
 
     job match {
       case "convert-to-delta" =>
-        ConvertHistoricalDataToDelta(
+        convertHistoricalDataToDelta(
           city,
           dataType,
           startDate,
@@ -87,23 +87,21 @@ class Runner extends Callable[Int]
         )
 
       case "convert-all-to-delta" =>
-        ConvertAllToDelta(
+        convertAllToDelta(
           dataType,
           startDate,
           endDate
         )
 
       case "find-top10-cities-by-avg-pollutant-specie" =>
-        FindTop10CitiesByAvgPollutantSpecie(
+        findTop10CitiesByAvgPollutantSpecie(
           pollutant,
           Timestamp.valueOf(startDate),
           Timestamp.valueOf(endDate)
         )
 
-      case "daily-average-polluyion" =>
-        calculateDailyAveragePollution(
-          pollutant
-        )
+      case "hourly-pollutant-metrics" =>
+        hourlyPollutantMetrics(pollutant)
 
       case _ =>
         println("Invalid job option.")

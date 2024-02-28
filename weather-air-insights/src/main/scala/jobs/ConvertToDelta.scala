@@ -9,7 +9,7 @@ import utils.DeltaConversion
 
 trait ConvertToDelta extends DeltaConversion with LazyLogging {
 
-  def ConvertAllToDelta(dType: String,
+  def convertAllToDelta(dType: String,
                         startDate: String,
                         endDate: String)
                        (implicit spark: SparkSession): Unit = {
@@ -24,11 +24,11 @@ trait ConvertToDelta extends DeltaConversion with LazyLogging {
 
       logger.info(s"Converting to delta dor city: ${cityName}")
 
-      ConvertHistoricalDataToDelta(cityName, dType, startDate, endDate)
+      convertHistoricalDataToDelta(cityName, dType, startDate, endDate)
     }
   }
 
-  def ConvertHistoricalDataToDelta(
+  def convertHistoricalDataToDelta(
                                     city: String,
                                     dType: String,
                                     startDate: String,
