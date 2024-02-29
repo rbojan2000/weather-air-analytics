@@ -6,6 +6,6 @@ The **weather-air-analytics** project is an integrated platform designed for com
 
 - **Real-time Data Analysis**: This module, detailed in the [streams-insights](streams-insights/README.md) directory, focuses on analyzing real-time air quality data streams. For more information, please refer to the corresponding README.
 
-- **Batch Data Analysis**: The [weather-air-insights](weather-air-insights/README.md) directory contains documentation and code related to batch data processing and analysis. This module is essential for in-depth analysis of historical air quality trends and patterns.
+- **Batch Data Analysis**: The [air-meteo-insights](air-meteo-insights/README.md) directory contains documentation and code related to batch data processing and analysis. This module is essential for in-depth analysis of historical air quality trends and patterns.
 
 Each part of the project has its own README providing detailed information and instructions specific to its functionality and usage. Please refer to these individual README files for a deeper understanding of each module within the **weather-air-analytics** project.

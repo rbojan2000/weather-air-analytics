@@ -6,7 +6,7 @@ services:
       - "9090:8080"
       - "7077:7077"
     volumes:
-       - ../../weather-air-insights:/opt/app
+       - ../../air-meteo-insights:/opt/app
        - ../../data:/opt/data
     environment:
       - SPARK_LOCAL_IP=spark-master
@@ -27,7 +27,7 @@ services:
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-a
     volumes:
-       - ../weather-air-insights:/opt/spark-apps
+       - ../air-meteo-insights:/opt/spark-apps
        - ../data:/opt/spark-data
   spark-worker-b:
     image: rbojan2000/apache-spark:3.5.0
