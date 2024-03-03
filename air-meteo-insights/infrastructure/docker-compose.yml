@@ -1,18 +1,24 @@
 version: "3.3"
 services:
   spark-master:
-    image: rbojan2000/apache-spark:3.5.0
+    image: rbojan2000/apache-spark:latest
     ports:
       - "9090:8080"
       - "7077:7077"
+      - "22:22"
     volumes:
        - ../../air-meteo-insights:/opt/app
        - ../../data:/opt/data
     environment:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master
+    networks:
+      - infrastructure_nw
+    command: >
+             bash -c "/etc/init.d/ssh start && ./start-spark.sh"
+
   spark-worker-a:
-    image: rbojan2000/apache-spark:3.5.0
+    image: rbojan2000/apache-spark:latest
     ports:
       - "9091:8080"
       - "7000:7000"
@@ -29,8 +35,13 @@ services:
     volumes:
        - ../air-meteo-insights:/opt/spark-apps
        - ../data:/opt/spark-data
+    networks:
+      - infrastructure_nw
+    command: >
+             bash -c "/etc/init.d/ssh start && ./start-spark.sh"
+
   spark-worker-b:
-    image: rbojan2000/apache-spark:3.5.0
+    image: rbojan2000/apache-spark:latest
     ports:
       - "9092:8080"
       - "7001:7000"
@@ -47,3 +58,13 @@ services:
     volumes:
        - ../weather-air-insights:/opt/spark-apps
        - ../data:/opt/spark-data
+    networks:
+      - infrastructure_nw
+    command: >
+             bash -c "/etc/init.d/ssh start && ./start-spark.sh"
+
+networks:
+  infrastructure_nw:
+    driver: bridge
+    name: infrastructure_nw
+    external: true

@@ -18,6 +18,18 @@ FROM builder as apache-spark
 
 WORKDIR /opt/spark
 
+# Install SSH server
+RUN apt-get update && apt-get install -y openssh-server
+
+# Configure SSH
+RUN mkdir /var/run/sshd
+RUN echo 'root:password' | chpasswd
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+
+# Expose SSH port
+EXPOSE 22
+    
 ENV SPARK_MASTER_PORT=7077 \
 SPARK_MASTER_WEBUI_PORT=8080 \
 SPARK_LOG_DIR=/opt/spark/logs \
@@ -28,14 +40,12 @@ SPARK_WORKER_PORT=7000 \
 SPARK_MASTER="spark://spark-master:7077" \
 SPARK_WORKLOAD="master"
 
-EXPOSE 8080 7077 6066
-
 RUN mkdir -p $SPARK_LOG_DIR && \
 touch $SPARK_MASTER_LOG && \
 touch $SPARK_WORKER_LOG && \
 ln -sf /dev/stdout $SPARK_MASTER_LOG && \
 ln -sf /dev/stdout $SPARK_WORKER_LOG
 
-COPY start-spark.sh /
+COPY start-spark.sh .
 
-CMD ["/bin/bash", "/start-spark.sh"]
+# CMD ["/bin/bash", "/start-spark.sh"]
