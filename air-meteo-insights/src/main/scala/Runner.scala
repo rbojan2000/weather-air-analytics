@@ -25,6 +25,10 @@ class Runner extends Callable[Int]
       "Specifies which job should be run. Valid values are: " +
         "convert-to-delta, " +
         "convert-all-to-delta, " +
+        "hourly-pollutant-metrics, " +
+        "hourly-pollutant-cities-rank-by-max-pollutant-concetration, " +
+        "correlation-between-air-quality-and-weather, " +
+        "wind-speed-pollutant-ratio, " +
         "find-top10-cities-by-avg-pollutant-specie."
     ),
     required = true
