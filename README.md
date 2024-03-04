@@ -1,11 +1,23 @@
-# weather-air-analytics
+# Weather Air Analytics
 
-The **weather-air-analytics** project is an integrated platform designed for comprehensive analysis of air quality data. It encompasses various modules dedicated to different aspects of air quality analysis, including real-time data processing, batch data processing, and historical data retrieval.
+The **Weather Air Analytics** project  is an integrated platform designed for comprehensive analysis of air quality data. It encompasses various modules dedicated to different aspects of air quality analysis, including real-time data processing, batch data processing, and historical data retrieval.
 
-- **Historical Data Retrieval**: For accessing historical air quality data, the [open-meteo](open-meteo/README.md) project provides tools and resources. Refer to its README for guidance on retrieving and processing historical air quality data.
 
-- **Real-time Data Analysis**: This module, detailed in the [streams-insights](streams-insights/README.md) directory, focuses on analyzing real-time air quality data streams. For more information, please refer to the corresponding README.
+## Historical Data Retrieval
 
-- **Batch Data Analysis**: The [air-meteo-insights](air-meteo-insights/README.md) directory contains documentation and code related to batch data processing and analysis. This module is essential for in-depth analysis of historical air quality trends and patterns.
+The [open-meteo](open-meteo/README.md) is responsible for retrieving historical air quality and weather forecast data.
 
-Each part of the project has its own README providing detailed information and instructions specific to its functionality and usage. Please refer to these individual README files for a deeper understanding of each module within the **weather-air-analytics** project.
+## Real-time Data Analysis
+
+The [streams-insights](streams-insights/README.md) focuses on analyzing real-time air quality data streams, calculating metrics, and monitoring city air pollution levels.
+
+## Batch Data Analysis
+
+The [air-meteo-insights](air-meteo-insights/README.md) focuses on batch data processing and weather and air quality analysis. This module is essential for in-depth analysis of historical air quality trends and patterns.
+
+Each part of the project has its own README providing detailed information and instructions specific to its functionality and usage. Please refer to these individual README files for a deeper understanding of each module within the **Weather Air Analytics** project.
+
+## Architecture
+The architecture diagram above illustrates the overall structure of the **Weather Air Analytics** project. It shows how different modules interact with each other to facilitate data processing and analysis.
+
+![architecture](/docs/architecture.png)
