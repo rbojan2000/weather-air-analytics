@@ -121,7 +121,7 @@ class KafkaConsumer:
                             continue
 
                         if len(city_aqi) > self.parquet_batch_size:
-                            self._save_data(city_aqi, filename="city_aqi")
+                            self._save_data(city_aqi, filename="city_aqi.csv")
                             city_aqi.clear()
 
                 logger.info("Commiting offsets for batch of messages.")
@@ -158,4 +158,4 @@ class KafkaConsumer:
         path = f"{DATA_PATH}/{filename}"
         df = pd.DataFrame.from_records(data)
         logger.info(f"Writing a batch of data to path {path}.")
-        parquet_write(path, df, append=True, compression="SNAPPY")
+        df.to_csv(path)
