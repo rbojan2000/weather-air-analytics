@@ -19,7 +19,7 @@
 Each part of the project has its own README providing detailed information and instructions specific to its functionality and usage. Please refer to these individual README files for a deeper understanding of each module within the **Weather Air Analytics** project.
 
 ## Orchestrator
-Orchestrator manages the scheduling and coordination of Spark jobs within the project. For detailed information on how Spark jobs are organized and planned, refer to the [orchestrator README.md](orchestrator/README.md)
+Orchestrator manages the scheduling and coordination of Spark jobs within the project. For detailed information on how Spark jobs are organized and planned, refer to the [orchestrator/README.md](orchestrator/README.md)
 
 ## Architecture
 Architecture diagram illustrates the overall structure of the **Weather Air Analytics** project. It shows how different modules interact with each other to facilitate data processing and analysis.

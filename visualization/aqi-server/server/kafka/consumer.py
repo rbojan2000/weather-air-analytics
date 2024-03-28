@@ -1,7 +1,3 @@
-# pylint: disable=unspecified-encoding
-# pylint: disable=logging-fstring-interpolation
-# pylint: disable=too-many-try-statements
-
 import logging
 import os
 from typing import Any
@@ -12,7 +8,6 @@ from confluent_kafka.error import KafkaError
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroDeserializer
 from confluent_kafka.serialization import MessageField, SerializationContext
-from fastparquet import write as parquet_write
 
 from server.exception import (
     KafkaMessageFetchException,
