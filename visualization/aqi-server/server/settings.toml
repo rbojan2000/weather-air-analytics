@@ -1,0 +1,11 @@
+[KAFKA]
+TOPICS=["aqicn.city.air.pollutant"]
+BOOTSTRAP_SERVERS=["localhost:9092"]
+SCHEMA_REGISTRY_URL="http://localhost:8081"
+GROUP_ID="aqi-server"
+AUTO_OFFSET_RESET="earliest"
+ENABLE_AUTO_COMMIT=false
+MAX_POLL_RECORDS=20
+
+[PARQUET]
+BATCH_SIZE=1000
