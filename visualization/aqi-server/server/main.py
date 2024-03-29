@@ -9,6 +9,7 @@ from server.kafka.consumer import KafkaConsumer
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 def start() -> None:
     consumer_configuration = Configuration(
         settings.kafka.bootstrap_servers,
@@ -17,7 +18,7 @@ def start() -> None:
         settings.kafka.enable_auto_commit,
         settings.kafka.max_poll_records,
         settings.kafka.schema_registry_url,
-        settings.parquet.batch_size,
+        settings.kafka.batch_size,
     )
     consumer = KafkaConsumer(consumer_configuration)
 

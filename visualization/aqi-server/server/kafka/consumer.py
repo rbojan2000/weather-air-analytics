@@ -1,21 +1,21 @@
 import logging
-import os
 from typing import Any
 
-import pandas as pd
 from confluent_kafka import Consumer
 from confluent_kafka.error import KafkaError
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroDeserializer
 from confluent_kafka.serialization import MessageField, SerializationContext
 
+from server.common import save_data
 from server.exception import (
     KafkaMessageFetchException,
     SchemaNotExistsException,
     UnsupportedDeserializerException,
 )
 from server.kafka.configuration import Configuration
-from server.paths import DATA_PATH, SCHEMAS_PATH
+from server.paths import SCHEMAS_PATH
+from server.transofrm import transform_city_aqi_data
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +31,7 @@ class KafkaConsumer:
         )
 
         config_dict = configuration.consumer_config()
-        self.parquet_batch_size = configuration.parquet_batch_size
+        self.batch_size = configuration.batch_size
 
         logger.info("Initializing consumer.")
         self.consumer = Consumer(config_dict)
@@ -64,7 +64,7 @@ class KafkaConsumer:
 
         for topic in topics:
             if topic == CITY_AIR_POLLUTANT_TOPIC:
-                self.country_metrics_deserializer = self._init_deserializer(
+                self.city_aqi_deserializer = self._init_deserializer(
                     CITY_AIR_POLLUTANT_TOPIC, "air_quality_with_pollution_level"
                 )
             # elif topic == CITY_AIR_POLLUTANT_TOPIC:
@@ -104,7 +104,7 @@ class KafkaConsumer:
                             raise KafkaMessageFetchException(message.error())
                     else:
                         if message.topic() == CITY_AIR_POLLUTANT_TOPIC:
-                            data = self._process_country_metrics_message(message)
+                            data = self._process_city_aqi_message(message)
                             city_aqi.append(data)
                         # elif message.topic() == CITY_AIR_POLLUTANT_TOPIC:
                         #     data = self._process_flight_message(message)
@@ -115,11 +115,12 @@ class KafkaConsumer:
                             )
                             continue
 
-                        if len(city_aqi) > self.parquet_batch_size:
-                            self._save_data(city_aqi, filename="city_aqi.csv")
+                        if len(city_aqi) > self.batch_size:
+                            transformed_city_aqi_df = transform_city_aqi_data(city_aqi)
+                            save_data(transformed_city_aqi_df, filename="city_aqi.csv")
                             city_aqi.clear()
 
-                logger.info("Commiting offsets for batch of messages.")
+                    logger.info("Commiting offsets for batch of messages.")
                 self.consumer.commit(asynchronous=True)
 
             except KeyboardInterrupt:
@@ -127,30 +128,11 @@ class KafkaConsumer:
                 self.consumer.close()
                 break
 
-    def _process_country_metrics_message(self, message) -> dict[str, Any]:
+    def _process_city_aqi_message(self, message) -> dict[str, Any]:
         topic = message.topic()
         value = message.value()
-        data = self.country_metrics_deserializer(
+        data = self.city_aqi_deserializer(
             value, SerializationContext(topic, MessageField.VALUE)
         )
 
         return data
-
-    # def _process_flight_message(self, message) -> dict[str, Any]:
-    #     topic = message.topic()
-    #     value = message.value()
-    #     data = self.flight_event_deserializer(
-    #         value, SerializationContext(topic, MessageField.VALUE)
-    #     )
-    #
-    #     return data
-
-    def _save_data(self, data: list[dict[str, Any]], filename: str) -> None:
-        if not os.path.exists(DATA_PATH):
-            logger.info("Creating data directory.")
-            os.mkdir(DATA_PATH)
-
-        path = f"{DATA_PATH}/{filename}"
-        df = pd.DataFrame.from_records(data)
-        logger.info(f"Writing a batch of data to path {path}.")
-        df.to_csv(path)

@@ -1,6 +1,7 @@
 import socket
 from typing import Any
 
+
 class Configuration:
     """Configuration class for Aqi server as Kafka consumer."""
 
@@ -12,16 +13,16 @@ class Configuration:
             enable_auto_commit: bool,
             max_poll_records: int,
             schema_registry_url: str,
-            parquet_batch_size: int,
-        ) -> None:
-            self.bootstrap_servers = ",".join(servers)
-            self.group_id = group_id
-            self.client_id = socket.gethostname()
-            self.auto_offset_reset = offset_reset
-            self.enable_auto_commit = enable_auto_commit
-            self.max_poll_records = max_poll_records
-            self.schema_registry_url = schema_registry_url
-            self.parquet_batch_size = parquet_batch_size
+            batch_size: int,
+    ) -> None:
+        self.bootstrap_servers = ",".join(servers)
+        self.group_id = group_id
+        self.client_id = socket.gethostname()
+        self.auto_offset_reset = offset_reset
+        self.enable_auto_commit = enable_auto_commit
+        self.max_poll_records = max_poll_records
+        self.schema_registry_url = schema_registry_url
+        self.batch_size = batch_size
 
     def consumer_config(self) -> dict[str, Any]:
         return {
