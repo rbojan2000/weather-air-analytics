@@ -2,12 +2,13 @@ version: "3"
 
 services:
   grafana:
-    image: grafana/grafana-oss:8.4.3
+    image: grafana/grafana-oss:8.1.3
+    ports:
+      - ${GRAFANA_PORT}:3000
     volumes:
       - grafana-storage:/var/lib/grafana:rw
       - ../aqi-server/data:/data
-    ports:
-      - ${GRAFANA_PORT}:3000
+      - ../grafana/dashboard_model.json:/var/lib/grafana/dashboards/city-aqi/dashboard.json
     environment:
       - GF_INSTALL_PLUGINS=marcusolsson-csv-datasource
       - GF_PLUGIN_ALLOW_LOCAL_MODE=true
