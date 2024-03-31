@@ -29,7 +29,7 @@ elif [ "$1" == "--visualization" ]; then
         docker network ls | grep infrastructure_nw >/dev/null || docker network create --driver bridge infrastructure_nw
         docker compose -f visualization/infrastructure/docker-compose.yml up -d
     elif [ "$2" == "--stop" ]; then
-        docker compose -f visualization/infrastructure/docker-compose.yml down -d
+        docker compose -f visualization/infrastructure/docker-compose.yml down
     else
         echo "Invalid argument provided"
         echo "Usage: ./run.sh --visualization --start/--stop"

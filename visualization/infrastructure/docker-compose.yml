@@ -8,7 +8,7 @@ services:
     volumes:
       - grafana-storage:/var/lib/grafana:rw
       - ../aqi-server/data:/data
-      - ../grafana/dashboard_model.json:/var/lib/grafana/dashboards/city-aqi/dashboard.json
+      - ../grafana/city-aqi-dashboard.json:/var/lib/grafana/dashboards/city-aqi-dashboard.json
     environment:
       - GF_INSTALL_PLUGINS=marcusolsson-csv-datasource
       - GF_PLUGIN_ALLOW_LOCAL_MODE=true
