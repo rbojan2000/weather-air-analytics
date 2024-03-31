@@ -23,19 +23,15 @@ services:
     volumes:
       - ./update_run.sh:/tmp/update_run.sh
     command: "bash -c 'if [ ! -f /tmp/update_run.sh ]; then echo \"ERROR: Did you forget the update_run.sh file that came with this docker-compose.yml file?\" && exit 1 ; else chmod +x /tmp/update_run.sh && /tmp/update_run.sh && /etc/confluent/docker/run ; fi'"
-
+    networks:
+      - streams_nw
 
   kafka-topic-setup:
     image: confluentinc/cp-kafka:7.3.1
     container_name: kafka-topic-setup
     depends_on:
       - broker
-    command: "bash -c 'echo Waiting for Kafka to be ready... && \
-                       cub kafka-ready -b broker:29092 1 20 && \
-                       kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.air.quality && \
-                       kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.cities && \
-                       kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.city.air.pollutant && \
-                       kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.country.metrics '"
+    command: "bash -c 'echo Waiting for Kafka to be ready... && cub kafka-ready -b broker:29092 1 20 && kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.air.quality && kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.cities && kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.city.air.pollutant && kafka-topics --create --if-not-exists --bootstrap-server broker:29092 --partitions 3 --replication-factor 1 --topic aqicn.country.metrics '"
   schema-registry:
     image: confluentinc/cp-schema-registry:7.3.0
     hostname: schema-registry
@@ -49,23 +45,30 @@ services:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'broker:29092'
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+    networks:
+      - streams_nw
 
   weather-air-analytics_streams-insights_producer_cities:
     image: rbojan2000/weather-air-analytics_streams-insights_producer
-    command: "bash -c 'echo Waiting for Kafka to be ready... && \
-                    until nc -z schema-registry 8081; do sleep 1; done  && \
-                    java -jar target/scala-2.13/producer-0.1.0.jar -d cities'"
+    command: "bash -c 'echo Waiting for Kafka to be ready... && until nc -z schema-registry 8081; do sleep 1; done  && java -jar target/scala-2.13/producer-0.1.0.jar -d cities'"
     depends_on:
       - broker
       - schema-registry
-  
+    networks:
+      - streams_nw
+
   weather-air-analytics_streams-insights_producer_air-quality:
     image: rbojan2000/weather-air-analytics_streams-insights_producer
-    command: "bash -c 'echo Waiting for Kafka to be ready... && \
-                    until nc -z schema-registry 8081; do sleep 1; done  && \
-                    java -jar target/scala-2.13/producer-0.1.0.jar -d air-quality'"
+    command: "bash -c 'echo Waiting for Kafka to be ready... && until nc -z schema-registry 8081; do sleep 1; done  && java -jar target/scala-2.13/producer-0.1.0.jar -d air-quality'"
     depends_on:
       - broker
       - weather-air-analytics_streams-insights_producer_cities
       - schema-registry
-  
+    networks:
+      - streams_nw
+
+networks:
+  streams_nw:
+    driver: bridge
+    name: streams_nw
+    external: true
