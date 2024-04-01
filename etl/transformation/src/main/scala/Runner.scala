@@ -35,22 +35,21 @@ class Runner extends Callable[Int]
 
   @Option(
     names = Array("-sd", "--start-date"),
-    description = Array("Start date for data analysis."),
-    required = false
+    required = true
   )
   private var startDate: String = ""
 
   @Option(
     names = Array("-ed", "--end-date"),
     description = Array("End date for data analysis."),
-    required = false
+    required = true
   )
   private var endDate: String = ""
 
   @Option(
     names = Array("-dt", "--data-type"),
     description = Array("Type of data (e.g., air-quality, weather)."),
-    required = false
+    required = true
   )
   private var dataType: String = ""
 
