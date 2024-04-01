@@ -1,7 +1,8 @@
-{
-    "start_date": "2017-01-01",
-    "end_date": "2023-12-09",
-    "weather_daily_params": [
+[METEO]
+START_DATE = "2017-01-01"
+END_DATE = "2023-12-09"
+API = "https://archive-api.open-meteo.com/v1/archive"
+DAILY_PARAMS = [
         "weather_code",
         "temperature_2m_max",
         "temperature_2m_min",
@@ -22,12 +23,13 @@
         "wind_direction_10m_dominant",
         "shortwave_radiation_sum",
         "et0_fao_evapotranspiration"
-    ],
-    "timezone": "auto",
-    "cities_csv_path": "../../data/raw/european_cities.csv",
-    "historical_weather_daily_data_path": "../../data/raw/historical_weather_daily/",
-    "historical_air_quality_data_path": "../../data/raw/historical_air_quality/",
-    "air_hourly_params": [
+        ]
+
+[AIR]
+START_DATE = "2022-07-29"
+END_DATE = "2023-12-09"
+API = "https://air-quality-api.open-meteo.com/v1/air-quality"
+HOURLY_PARAMS = [
         "pm10",
         "pm2_5",
         "carbon_monoxide",
@@ -45,5 +47,8 @@
         "mugwort_pollen",
         "olive_pollen",
         "ragweed_pollen"
-    ]
-}
+        ]
+
+[DEFAULT]
+TIMEZONE="auto"
+SLEEP_TIME=60

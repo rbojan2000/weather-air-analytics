@@ -22,3 +22,10 @@ orchestrator/config/
 orchestrator/dags/__pycache__/
 orchestrator/logs/
 plugins/
+
+
+*.cache.sqlite
+etl/ingestion/ingestion/ingestion_env/
+orchestrator/orchestrator_env/
+visualization/aqi-server/aqi_server_env/
+
