@@ -7,7 +7,7 @@ services:
       - "7077:7077"
       - "22:22"
     volumes:
-       - ../transformation:/opt/app
+       - ../transformation:/opt/app/transformation
        - ../../data:/opt/data
     environment:
       - SPARK_LOCAL_IP=spark-master

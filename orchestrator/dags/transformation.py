@@ -7,7 +7,7 @@ with DAG(
     dag_id='convert-to-delta',
     default_args=default_args,
     params={
-         "city": "London",
+         "city": "Moscow",
          "start_date": "2022-07-29",
          "end_date": "2023-12-09",
          "data_type": "historical_air_quality"
@@ -21,7 +21,7 @@ with DAG(
         "cd ../opt/spark && "
         "export JAVA_HOME=/usr/local/openjdk-11/ && "
         "bin/spark-submit --class Runner "
-        "../app/target/scala-2.12/air-meteo-insights-0.1.jar "
+        "../app/transformation/target/scala-2.12/transformation-0.1.jar "
     )
 
 
@@ -59,7 +59,7 @@ with DAG(
         "cd ../opt/spark && "
         "export JAVA_HOME=/usr/local/openjdk-11/ && "
         "bin/spark-submit --class Runner "
-        "../app/target/scala-2.12/air-meteo-insights-0.1.jar "
+        "../app/transformation/target/scala-2.12/transformation-0.1.jar "
     )
 
     job_options = {
