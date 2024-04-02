@@ -18,7 +18,7 @@ with DAG(
         "cd ../opt/spark && "
         "export JAVA_HOME=/usr/local/openjdk-11/ && "
         "bin/spark-submit --class Runner "
-        "../app/target/scala-2.12/air-meteo-insights-0.1.jar "
+        "../app/load/target/scala-2.12/load-0.1.jar "
     )
 
 
@@ -51,7 +51,7 @@ with DAG(
         "cd ../opt/spark && "
         "export JAVA_HOME=/usr/local/openjdk-11/ && "
         "bin/spark-submit --class Runner "
-        "../app/target/scala-2.12/air-meteo-insights-0.1.jar "
+        "../app/load/target/scala-2.12/load-0.1.jar "
     )
 
 

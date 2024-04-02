@@ -8,6 +8,7 @@ services:
       - "22:22"
     volumes:
        - ../transformation:/opt/app/transformation
+       - ../load:/opt/app/load
        - ../../data:/opt/data
     environment:
       - SPARK_LOCAL_IP=spark-master
@@ -34,7 +35,9 @@ services:
       - SPARK_LOCAL_IP=spark-worker-a
     volumes:
        - ../transformation:/opt/spark-apps
+       - ../load:/opt/app/load
        - ../data:/opt/spark-data
+
     networks:
       - infrastructure_nw
     command: >
@@ -57,6 +60,7 @@ services:
       - SPARK_LOCAL_IP=spark-worker-b
     volumes:
        - ../transformation:/opt/spark-apps
+       - ../load:/opt/app/load
        - ../data:/opt/spark-data
     networks:
       - infrastructure_nw

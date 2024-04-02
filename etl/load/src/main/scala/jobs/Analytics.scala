@@ -14,16 +14,15 @@ trait Analytics extends LazyLogging {
   def windSpeedPollutantRatio(pollutant: String)
                              (implicit spark: SparkSession): DataFrame = {
 
-    val weatherDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaWeather).toDF
+    val weatherDF: DataFrame = DeltaTable.forPath(spark, AppConfig.silverHistoricalWeatherDaily).toDF
       .withColumn("date", to_date(col("date")))
 
     val dailyAirQuality: DataFrame = getDailyAirPollutantConcetrations()
 
-    weatherDF.show()
-    dailyAirQuality.show()
-    val weatherAndAirQualityData: DataFrame = dailyAirQuality.join(weatherDF, Seq("city", "date"), "inner")
+    val weatherAndAirQualityData: DataFrame =
+      dailyAirQuality
+        .join(weatherDF, Seq("city", "date"), "inner")
 
-    weatherAndAirQualityData.show(10)
 
     val window: WindowSpec = Window
       .partitionBy(col("date"))
@@ -47,7 +46,7 @@ trait Analytics extends LazyLogging {
   def rankPollutantConcentrationByHour(pollutant: String)
                                       (implicit spark: SparkSession): DataFrame = {
 
-    val airQualityDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaAirQuality).toDF
+    val airQualityDF: DataFrame = DeltaTable.forPath(spark, AppConfig.silverHistoricalAirQuality).toDF
 
     val hourlyWindow: WindowSpec = Window
       .partitionBy("date")
@@ -71,7 +70,7 @@ trait Analytics extends LazyLogging {
   def hourlyPollutantMaximumAndAverage(pollutant: String)
                                       (implicit spark: SparkSession): DataFrame = {
 
-    val airQualityDF = DeltaTable.forPath(spark, AppConfig.deltaAirQuality).toDF
+    val airQualityDF = DeltaTable.forPath(spark, AppConfig.silverHistoricalAirQuality).toDF
 
     val hourlyWindow: WindowSpec = Window
       .partitionBy("date")
@@ -101,7 +100,7 @@ trait Analytics extends LazyLogging {
   def correlationBetweenAirQualityAndWeather(airPollutant: String, weatherParam: String)
                                             (implicit spark: SparkSession): Double = {
 
-    val weatherDF: DataFrame = DeltaTable.forPath(spark, AppConfig.deltaWeather).toDF
+    val weatherDF: DataFrame = DeltaTable.forPath(spark, AppConfig.silverHistoricalWeatherDaily).toDF
     val dailyAirQuality: DataFrame = getDailyAirPollutantConcetrations()
 
     val weatherAndAirQualityData: DataFrame = dailyAirQuality.join(weatherDF, Seq("city", "date"), "inner")
@@ -117,7 +116,7 @@ trait Analytics extends LazyLogging {
                                           startDate: Timestamp,
                                           endDate: Timestamp)
                                          (implicit spark: SparkSession): Unit = {
-    val deltaTable = DeltaTable.forPath(spark, AppConfig.deltaAirQuality)
+    val deltaTable = DeltaTable.forPath(spark, AppConfig.silverHistoricalAirQuality)
 
     deltaTable.toDF
       .filter(col("date").between(startDate, endDate))
@@ -130,7 +129,7 @@ trait Analytics extends LazyLogging {
 
   private def getDailyAirPollutantConcetrations()(implicit spark: SparkSession): DataFrame = {
 
-    val airQualityDF = DeltaTable.forPath(spark, AppConfig.deltaAirQuality)
+    val airQualityDF = DeltaTable.forPath(spark, AppConfig.silverHistoricalAirQuality)
       .toDF
       .withColumn("date", to_date(col("date")))
 

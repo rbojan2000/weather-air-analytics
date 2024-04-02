@@ -1,6 +1,6 @@
 import com.typesafe.scalalogging.LazyLogging
 import config.AppConfig
-import jobs.{Analytics, ConvertToDelta}
+import jobs.Analytics
 import org.apache.spark.sql.SparkSession
 import picocli.CommandLine
 import picocli.CommandLine.{Command, Option}
@@ -16,15 +16,12 @@ import java.sql.Timestamp
 )
 class Runner extends Callable[Int]
   with LazyLogging
-  with ConvertToDelta
   with Analytics {
 
   @Option(
     names = Array("-j", "--job"),
     description = Array(
       "Specifies which job should be run. Valid values are: " +
-        "convert-to-delta, " +
-        "convert-all-to-delta, " +
         "hourly-pollutant-metrics, " +
         "hourly-pollutant-cities-rank-by-max-pollutant-concetration, " +
         "correlation-between-air-quality-and-weather, " +
@@ -92,21 +89,6 @@ class Runner extends Callable[Int]
       .getOrCreate()
 
     job match {
-      case "convert-to-delta" =>
-        convertHistoricalDataToDelta(
-          city,
-          dataType,
-          startDate,
-          endDate
-        )
-
-      case "convert-all-to-delta" =>
-        convertAllToDelta(
-          dataType,
-          startDate,
-          endDate
-        )
-
       case "find-top10-cities-by-avg-pollutant-specie" =>
         findTop10CitiesByAvgPollutantSpecie(
           pollutant,

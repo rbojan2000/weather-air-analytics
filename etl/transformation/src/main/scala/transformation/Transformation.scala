@@ -45,7 +45,6 @@ trait Transformation extends Common
     val rawDF = readCsv(csvPath, dataSchema)
 
     val filteredDF = processRawDataFrame(rawDF, dataSchema, city)
-    saveTableIfNotExist(filteredDF, dType)
 
     val deltaTable = DeltaTable.forPath(spark, getSilverTablePath(dType))
 

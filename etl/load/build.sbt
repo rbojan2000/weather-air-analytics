@@ -3,7 +3,7 @@ import Dependencies.*
 lazy val commonSettings = Seq(
   scalaVersion := "2.12.15",
   resolvers += "Confluent Maven Repository" at "https://packages.confluent.io/maven/",
-  name := "air-meteo-insights",
+  name := "load",
   version := "0.1"
 )
 
@@ -20,7 +20,7 @@ lazy val root = (project in file("."))
       Libs.picocli,
       Libs.scalaLogging,
       Libs.logback
-  ),
+    ),
     Compile / mainClass := Some("Runner"),
     assembly / mainClass := Some("Runner"),
     assembly / assemblyMergeStrategy := {
