@@ -6,7 +6,7 @@
 * [Infrastructure Setup](#infrastructure-setup)
 * [Jobs](#jobs)
   * [Delta](#delta)
-    * [Delta Tables](#delta-tables)
+  * [Delta Tables](#delta-tables)
   * [Analytics](#analytics)
 
 ## Infrastructure Setup

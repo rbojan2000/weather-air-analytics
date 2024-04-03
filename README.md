@@ -20,14 +20,14 @@ Comprehensive platform designed for in-depth analysis of both quality and weathe
 
 ## Batch Data Analysis
 * [etl](etl/README.md) consists of:
- * [Ingestion](etl/ingestion): Responsible for historical air quality and weather forecast ingestion data.
- * [Transformation](etl/transformation/): Performs cleaning and transforming raw data into Delta Tables.
- * [Load](etl/load): Performs analysis and metric calculation over air quality and weather data.
+    1. [Ingestion](etl/ingestion): Responsible for historical air quality and weather forecast ingestion data.
+    2. [Transformation](etl/transformation/): Performs cleaning and transforming raw data into Delta Tables.
+    3. [Load](etl/load): Performs analysis and metric calculation over air quality and weather data.
 
 <br>
 
 ## Orchestrator
-- Manages the scheduling and coordination of Spark jobs within the project.
+- Manages the scheduling and coordination of etl jobs within the project.
 
 <br>
 
@@ -37,4 +37,4 @@ Comprehensive platform designed for in-depth analysis of both quality and weathe
 <br>
 
 > [!NOTE]
-> Each part of the project has its own README providing detailed information and instructions specific to its functionality and usage. Please refer to these individual README files for a deeper understanding of each module within the **Weather Air Analytics** project.
+> Each module of the project has its own README providing detailed information and instructions specific to its functionality and usage. Please refer to these individual README files for a deeper understanding of each module within the **Weather Air Analytics** project.
