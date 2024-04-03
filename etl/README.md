@@ -1,13 +1,16 @@
-# air-meteo-insights
+# etl
 
-***Air Meteo Insights*** is responsible for transforming and filtering raw data into delta tables, as well as calculating ratios, correlations, air quality metrics, weather forecasts, and their correlations.
+- The ETL module plays a pivotal role in the Weather Air Analytics ecosystem by transforming raw data into actionable insights. It encompasses a series of operations, including data ingestion, transformation, and loading, aimed at preparing data for analysis and visualization.
 
-## Table of Contents
-* [Infrastructure Setup](#infrastructure-setup)
-* [Jobs](#jobs)
-  * [Delta](#delta)
-  * [Delta Tables](#delta-tables)
-  * [Analytics](#analytics)
+- The ETL module adheres to the medallion Data Lakehouse architecture, ensuring robustness, scalability, and reliability in data processing.
+
+1. [Ingestion](/etl/ingestion/README.md) is the initial step where raw data is sourced from [open-meteo](https://open-meteo.com/) API, and stored in the bronze layer.
+
+2. [Transformation](/etl/transformation/README.md) cleaning, transformation, and conversion raw data into Delta Tables. This phase ensures that the data is standardized, cleansed of inconsistencies, and formatted for analysis. The transformed data, ready for analysis and metric calculation, is stored in the silver layer.
+
+3. [Load](/etl/load/README.md) phase completes the ETL process by reading data from the silver layer, performing calculations, and writing the results to the gold layer. This final step includes computing various metrics, correlations, air quality indices, weather forecasts, and their interrelations.
+
+<br>
 
 ## Infrastructure Setup
 Initialize Spark cluster consisting of one master node and two worker nodes, use the following command:
@@ -16,12 +19,9 @@ Initialize Spark cluster consisting of one master node and two worker nodes, use
 docker compose up
 ```
 
-## Jobs
+<br>
 
-### Delta
-Delta processing involves the extraction of raw historical data. These jobs transform and filter the data before storing it in delta tables.
-
-#### Delta Tables
+## Delta Tables
 
 `historical_air_quality`
 
@@ -81,16 +81,3 @@ date                   |     |        |
 | uv_index_max                 | Index      | Daily maximum UV Index                                                                                                                                                           |
 | uv_index_clear_sky_max       | Index      | Daily maximum UV Index under clear sky conditions                                                                                                                                 |
 | city                 |     |      city name|
-
-
-### Analytics
-
-The **Analytics** job performs...
-
- - `hourly-pollutant-metrics`: This job compares the measured quantity of a particular air pollutant for the given hour against the maximum measured quantity of that pollutant for the same hour across all cities, as well as against the average quantity of that pollutant in the air for the same hour across all cities where measurements are taken.
- 
- - `hourly-pollutant-cities-rank-by-max-pollutant-concetration`: This job compares the measured concentration value of a pollutant with the maximum and minimum values measured across all cities. Additionally, it determines the rank for each city based on the concentration of that pollutant at that moment.
-
- - `correlation-between-air-quality-and-weather`: This job calculates the degree of correlation between a parameter for air quality and a parameter from the weather forecast. The correlation coefficient is computed based on all collected historical data.
-
- - `wind-speed-pollutant-ratio`: This job calculates the average wind speed at a height of 10 meters above the ground in time intervals of 3 days, the average daily concentration of pollen for the same 3-day interval, and computes their relationship for that time period.

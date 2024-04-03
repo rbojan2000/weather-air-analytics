@@ -11,7 +11,7 @@ The **streams-insights** part of the project encompasses the streaming component
 
 
 ### Infrastructure Setup
-Initialize the Kafka cluster,start producer for cities data, start producer for air quality data and air quality analyzer consumer using the following command:
+Initialize the Kafka cluster, start producers & consumer with
 
 ```bash
 docker compose up
@@ -29,6 +29,7 @@ Provided `docker-compose.yml` will setup:
 - Two producer applications for fetching and publishing data to the Kafka topics:
   - One producer for cities data
   - One producer for air quality data
+- One Air Quality Analyzer consumer
 
 ### System Entities
 Entities are represented with [Avro](https://avro.apache.org/docs/) schema and
