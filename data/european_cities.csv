@@ -1,0 +1,835 @@
+id,city,lat,lng,country,population
+17,Moscow,55.7522,37.6155,Russia,10452000
+19,Paris,48.8667,2.3333,France,9904000
+25,London,51.5,-0.1167,United Kingdom,8567000
+46,Madrid,40.4,-3.6834,Spain,5567000
+56,Barcelona,41.3833,2.1834,Spain,4920000
+63,St. Petersburg,59.939,30.316,Russia,4553000
+96,Berlin,52.5218,13.4015,Germany,3406000
+98,Rome,41.896,12.4833,Italy,3339000
+102,Athens,37.9833,23.7333,Greece,3242000
+120,Milan,45.47,9.205,Italy,2945000
+121,Stuttgart,48.78,9.2,Germany,2944700
+127,Frankfurt,50.1,8.675,Germany,2895000
+130,Lisbon,38.7227,-9.1449,Portugal,2812000
+138,Katowice,50.2604,19.02,Poland,2746000
+141,Kiev,50.4334,30.5166,Ukraine,2709000
+167,Vienna,48.2,16.3666,Austria,2400000
+172,Mannheim,49.5004,8.47,Germany,2362000
+177,Birmingham,52.475,-1.92,United Kingdom,2285000
+179,Naples,40.84,14.245,Italy,2250000
+181,Manchester,53.5004,-2.248,United Kingdom,2230000
+220,Bucharest,44.4334,26.0999,Romania,1942000
+233,Minsk,53.9,27.5666,Belarus,1805000
+239,Hamburg,53.55,10.0,Germany,1757000
+245,Brussels,50.8333,4.3333,Belgium,1743000
+246,Essen,51.45,7.0166,Germany,1742135
+254,Warsaw,52.25,21.0,Poland,1707000
+263,Budapest,47.5,19.0833,Hungary,1679000
+264,Turin,45.0704,7.67,Italy,1652000
+296,Leeds,53.83,-1.58,United Kingdom,1529000
+306,Florence,43.78,11.25,Italy,1500000
+321,Kharkiv,50.0,36.25,Ukraine,1461000
+335,Lyon,45.77,4.83,France,1423000
+339,The Hague,52.08,4.27,Netherlands,1406000
+341,Marseille,43.29,5.375,France,1400000
+346,Novosibirsk,55.03,82.96,Russia,1389000
+360,Porto,41.15,-8.62,Portugal,1337000
+365,Yekaterinburg,56.85,60.6,Russia,1313000
+372,Sheffield,53.3667,-1.5,United Kingdom,1292900
+376,Nizhny Novgorod,56.333,44.0001,Russia,1278000
+378,Duisburg,51.43,6.75,Germany,1276757
+379,Munich,48.1299,11.575,Germany,1275000
+380,Stockholm,59.3508,18.0973,Sweden,1264000
+386,Geneva,46.21,6.14,Switzerland,1240000
+391,Düsseldorf,51.2204,6.78,Germany,1220000
+393,Seville,37.405,-5.98,Spain,1212045
+405,Sofia,42.6833,23.3167,Bulgaria,1185000
+410,Glasgow,55.8744,-4.2507,United Kingdom,1160000
+419,Samara,53.195,50.1513,Russia,1137000
+421,Omsk,54.99,73.4,Russia,1135000
+429,Kazan,55.7499,49.1263,Russia,1115000
+430,Helsinki,60.1756,24.9341,Finland,1115000
+434,Zürich,47.38,8.55,Switzerland,1108000
+444,Belgrade,44.8186,20.468,Serbia,1099000
+448,Chelyabinsk,55.155,61.4387,Russia,1091000
+451,København,55.6786,12.5635,Denmark,1085000
+463,Dublin,53.3331,-6.2489,Ireland,1059000
+466,Rostov,47.2346,39.7127,Russia,1052000
+467,Dnipro,48.48,35.0,Ukraine,1050000
+471,Lille,50.65,3.08,France,1044000
+475,Amsterdam,52.35,4.9166,Netherlands,1031000
+485,Ufa,54.79,56.04,Russia,1018000
+493,Rotterdam,51.92,4.48,Netherlands,1005000
+495,Cologne,50.93,6.95,Germany,1004000
+504,Perm,58.0,56.25,Russia,997000
+508,Odessa,46.49,30.71,Ukraine,991000
+511,Donetsk,48.0,37.83,Ukraine,988000
+516,Volgograd,48.71,44.5,Russia,984000
+534,Salerno,40.6804,14.7699,Italy,954265
+549,Nice,43.715,7.265,France,927000
+552,Krasnoyarsk,56.014,92.866,Russia,925000
+556,Antwerpen,51.2204,4.415,Belgium,920000
+570,Tirana,41.3275,19.8189,Albania,895350
+585,Newcastle,55.0004,-1.6,United Kingdom,882000
+589,Bilbao,43.25,-2.93,Spain,875552
+607,Palermo,38.125,13.35,Italy,863000
+608,Cardiff,51.5,-3.225,United Kingdom,861400
+619,Toulouse,43.62,1.4499,France,847000
+622,Voronezh,51.73,39.27,Russia,844000
+624,Saratov,51.58,46.03,Russia,843000
+628,Oslo,59.9167,10.75,Norway,835000
+635,Basel,47.5804,7.59,Switzerland,830000
+637,Thessaloniki,40.6961,22.885,Greece,828000
+641,Braga,41.555,-8.4213,Portugal,826833
+644,Nottingham,52.9703,-1.17,United Kingdom,825600
+652,Liverpool,53.416,-2.918,United Kingdom,811000
+658,Valencia,39.485,-0.4,Spain,808000
+664,Lvov,49.835,24.03,Ukraine,803880
+665,Bordeaux,44.85,-0.595,France,803000
+676,Zaporizhzhya,47.8573,35.1768,Ukraine,788000
+685,Wuppertal,51.25,7.17,Germany,776525
+691,Saarbrücken,49.2504,6.97,Germany,770001
+701,Łódź,51.775,19.4514,Poland,758000
+702,Kraków,50.06,19.96,Poland,756000
+715,Liège,50.63,5.58,Belgium,749110
+719,Riga,56.95,24.1,Latvia,742572
+722,Gdańsk,54.36,18.64,Poland,740000
+724,Nürnberg,49.45,11.08,Germany,737304
+732,Bremen,53.08,8.8,Germany,724909
+734,Zagreb,45.8,16.0,Croatia,722526
+735,Hannover,52.367,9.7167,Germany,722490
+752,Tolyatti,53.4804,49.53,Russia,702879
+763,Chișinău,47.005,28.8577,Moldova,688134
+767,Bonn,50.7205,7.08,Germany,680543
+770,Catania,37.5,15.08,Italy,674542
+780,Bytom,50.35,18.91,Poland,662247
+788,Kryvyy Rih,47.9283,33.345,Ukraine,652380
+792,Krasnodar,45.02,39.0,Russia,649851
+793,Zaragoza,41.65,-0.89,Spain,649404
+794,Genoa,44.41,8.93,Italy,647497
+798,Ulyanovsk,54.33,48.41,Russia,640680
+799,Utrecht,52.1003,5.12,Netherlands,640000
+803,Wrocław,51.1104,17.03,Poland,634893
+805,Izhevsk,56.85,53.23,Russia,631038
+811,Poznań,52.4058,16.8999,Poland,623997
+817,Southend-on-Sea,51.55,0.72,United Kingdom,618386
+818,Dresden,51.05,13.75,Germany,617515
+819,Wiesbaden,50.0804,8.25,Germany,617126
+829,Yaroslavl,57.62,39.87,Russia,606730
+841,Barnaul,53.355,83.745,Russia,599579
+858,Dortmund,51.53,7.45,Germany,588462
+859,Vladivostok,43.13,131.91,Russia,587022
+860,Irkutsk,52.32,104.245,Russia,586695
+867,Khabarovsk,48.455,135.12,Russia,579000
+898,Makhachkala,42.98,47.5,Russia,554981
+901,Bristol,51.45,-2.5833,United Kingdom,553528
+906,Orenburg,51.78,55.11,Russia,550204
+907,Málaga,36.7204,-4.42,Spain,550058
+916,Leipzig,51.3354,12.41,Germany,542529
+917,Vilnius,54.6834,25.3166,Lithuania,542366
+921,Novokuznetsk,53.75,87.115,Russia,539616
+924,Göteborg,57.75,12.0,Sweden,537797
+926,Tomsk,56.495,84.975,Russia,535479
+929,Rouen,49.4304,1.08,France,532559
+941,Ryazan,54.62,39.72,Russia,520173
+944,Tyumen,57.14,65.53,Russia,519119
+945,Lipetsk,52.62,39.64,Russia,515655
+951,Penza,53.18,45.0,Russia,512602
+953,Mykolayiv,46.9677,31.9843,Ukraine,510840
+956,Gliwice,50.3304,18.67,Poland,507670
+961,Edinburgh,55.9483,-3.2191,United Kingdom,504966
+970,Brighton,50.8303,-0.17,United Kingdom,503008
+971,Astrakhan,46.3487,48.055,Russia,502533
+972,Bradford,53.8,-1.75,United Kingdom,501700
+973,Bari,41.1142,16.8728,Italy,500577
+993,Skopje,42.0,21.4335,Macedonia,494087
+999,Tula,54.2,37.6299,Russia,489486
+1003,Bologna,44.5004,11.34,Italy,488172
+1012,Mariupol,47.0962,37.5562,Ukraine,481626
+1016,Homyel,52.43,31.0,Belarus,480951
+1023,Kemerovo,55.34,86.09,Russia,477090
+1033,Piraeus,37.95,23.7,Greece,466065
+1042,Naberezhnyye Chelny,55.7,52.3199,Russia,461086
+1047,Leicester,52.63,-1.1332,United Kingdom,457983
+1048,Kirov,58.5901,49.67,Russia,457437
+1055,Sunderland,54.92,-1.38,United Kingdom,452934
+1057,Luhansk,48.5698,39.3344,Ukraine,452000
+1063,Belfast,54.6,-5.96,United Kingdom,450406
+1071,Cheboksary,56.13,47.25,Russia,446781
+1076,Gent,51.03,3.7,Belgium,444336
+1080,Portsmouth,50.8003,-1.08,United Kingdom,442252
+1086,Strasbourg,48.58,7.75,France,439972
+1090,Nantes,47.2104,-1.59,France,438537
+1099,Kaliningrad,54.7,20.4973,Russia,434954
+1109,Bryansk,53.26,34.43,Russia,427236
+1110,Bournemouth,50.73,-1.9,United Kingdom,426945
+1112,Heidelberg,49.42,8.7,Germany,426590
+1117,Bratislava,48.15,17.117,Slovakia,423737
+1120,Ivanovo,57.01,41.01,Russia,420839
+1130,Middlesbrough,54.5804,-1.23,United Kingdom,416042
+1133,Magnitogorsk,53.4227,58.98,Russia,413351
+1139,Kursk,51.74,36.19,Russia,409431
+1141,Metz,49.1203,6.18,France,409186
+1147,Szczecin,53.4204,14.53,Poland,407811
+1151,Murcia,37.98,-1.13,Spain,406807
+1165,Tver,56.86,35.89,Russia,400212
+1166,Surgut,61.2599,73.425,Russia,400000
+1172,Khmelnytskyy,49.4249,27.0015,Ukraine,398346
+1173,Eindhoven,51.43,5.5,Netherlands,398053
+1176,Horlivka,48.2996,38.0547,Ukraine,396885
+1185,Tallinn,59.4339,24.728,Estonia,394024
+1192,Stoke,53.0004,-2.18,United Kingdom,390801
+1199,Grenoble,45.1804,5.72,France,388574
+1202,Granada‎,37.165,-3.585,Spain,388290
+1204,Coventry,52.4204,-1.5,United Kingdom,388271
+1215,Southampton,50.9,-1.4,United Kingdom,384417
+1220,Nizhny Tagil,57.92,59.975,Russia,381116
+1223,Vigo,42.22,-8.73,Spain,378952
+1224,Las Palmas,28.1,-15.43,Spain,378495
+1226,Karlsruhe,49.0,8.4,Germany,377487
+1228,Makiyivka,48.0297,37.9746,Ukraine,376610
+1232,Palma,39.5743,2.6542,Spain,375773
+1238,Kaunas,54.9504,23.88,Lithuania,374643
+1246,La Coruña,43.33,-8.42,Spain,370610
+1250,Reading,51.47,-0.98,United Kingdom,369804
+1252,Mahilyow,53.8985,30.3247,Belarus,369200
+1254,Valletta,35.8997,14.5147,Malta,368250
+1258,Bydgoszcz,53.1204,18.01,Poland,366452
+1262,Vladikavkaz,43.0504,44.67,Russia,364630
+1265,Stavropol,45.05,41.98,Russia,363064
+1272,Ulan Ude,51.825,107.625,Russia,360278
+1274,Lublin,51.2504,22.5727,Poland,360044
+1276,Augsburg,48.35,10.9,Germany,358989
+1280,Toulon,43.1342,5.9188,France,357693
+1282,San Sebastián,43.3204,-1.98,Spain,357468
+1290,Archangel,64.575,40.545,Russia,356051
+1302,Vinnytsya,49.2254,28.4816,Ukraine,352115
+1309,Haarlem,52.3804,4.63,Netherlands,349957
+1316,Linz,48.3192,14.2888,Austria,349161
+1318,Verona,45.4404,10.99,Italy,347459
+1323,Charleroi,50.4204,4.45,Belgium,345367
+1324,Belgorod,50.63,36.5999,Russia,345289
+1329,Kurgan,55.46,65.345,Russia,343129
+1331,Vitsyebsk,55.1887,30.1853,Belarus,342700
+1341,Plovdiv,42.154,24.754,Bulgaria,340494
+1347,Kaluga,54.5204,36.27,Russia,338978
+1356,Santa Cruz de Tenerife,28.47,-16.25,Spain,336061
+1357,Gijón,43.53,-5.67,Spain,335972
+1363,Orel,52.97,36.07,Russia,334552
+1372,Bielefeld,52.03,8.53,Germany,331906
+1385,Sochi,43.59,39.73,Russia,327608
+1386,Montpellier,43.6104,3.87,France,327254
+1390,Iași,47.1683,27.5749,Romania,325914
+1394,Yoshkar Ola,56.6354,47.8749,Russia,324406
+1396,Volzhskiy,48.7948,44.7744,Russia,323293
+1398,Valladolid,41.65,-4.75,Spain,322304
+1401,Córdoba,37.88,-4.77,Spain,321376
+1402,Smolensk,54.7827,32.0473,Russia,320991
+1406,Podolsk,55.3804,37.5299,Russia,320635
+1407,Kherson,46.6325,32.6007,Ukraine,320477
+1416,Murmansk,68.97,33.1,Russia,319263
+1421,Vladimir,56.13,40.4099,Russia,318648
+1424,Poltava,49.574,34.5703,Ukraine,317847
+1427,Hrodna,53.6779,23.8341,Belarus,317365
+1430,Cluj-Napoca,46.7884,23.5984,Romania,316748
+1433,Alicante,38.3512,-0.4836,Spain,315863
+1437,Timișoara,45.7588,21.2234,Romania,315053
+1438,Ljubljana,46.0553,14.515,Slovenia,314807
+1439,Pescara,42.4554,14.2187,Italy,314789
+1440,Gdynia,54.5204,18.53,Poland,314664
+1444,Varna,43.2156,27.8953,Bulgaria,312770
+1445,Koblenz,50.3505,7.6,Germany,312633
+1446,Cherepovets,59.1404,37.91,Russia,311850
+1449,Galați,45.4559,28.0459,Romania,311156
+1450,Brașov,45.6475,25.6072,Romania,311044
+1459,Chita,52.055,113.465,Russia,308500
+1463,Naltchik,43.4981,43.6179,Russia,307866
+1464,Chernihiv,51.5049,31.3015,Ukraine,307684
+1476,Craiova,44.3263,23.8259,Romania,304142
+1479,Constanța,44.2027,28.61,Romania,303399
+1480,Saransk,54.1704,45.18,Russia,303394
+1486,Chemnitz,50.83,12.92,Germany,302643
+1488,Kingston upon Hull,53.7504,-0.33,United Kingdom,302296
+1494,Tambov,52.73,41.43,Russia,301482
+1496,Brest,52.1,23.7,Belarus,300715
+1511,Chernivtsi,48.3053,25.9216,Ukraine,298251
+1513,Cherkasy,49.4347,32.0709,Ukraine,297568
+1520,Vologda,59.21,39.92,Russia,294889
+1521,Sumy,50.9243,34.7809,Ukraine,294456
+1522,Swansea,51.63,-3.95,United Kingdom,294339
+1531,Białystok,53.1504,23.17,Poland,291855
+1533,Cagliari,39.2224,9.104,Italy,291511
+1539,Kassel,51.3,9.5,Germany,289924
+1572,Cádiz,36.535,-6.225,Spain,283157
+1576,Zhytomyr,50.2456,28.6622,Ukraine,282192
+1592,Taganrog,47.23,38.92,Russia,279056
+1594,Kostroma,57.77,40.94,Russia,277656
+1598,Komsomolsk na Amure,50.555,137.02,Russia,275908
+1599,Prokopyevsk,53.9,86.71,Russia,275615
+1600,Bern,46.9167,7.467,Switzerland,275329
+1605,Pamplona,42.82,-1.65,Spain,274545
+1611,Blackpool,53.8304,-3.05,United Kingdom,272792
+1620,Venice,45.4387,12.335,Italy,270816
+1624,Münster,51.9704,7.62,Germany,270184
+1626,Kiel,54.3304,10.13,Germany,269427
+1627,Malmö,55.5833,13.0333,Sweden,269349
+1628,Nancy,48.6837,6.2,France,268976
+1636,Sterlitamak,53.63,55.96,Russia,267231
+1641,Lausanne,46.5304,6.65,Switzerland,265702
+1642,Saint-Étienne,45.4304,4.38,France,265684
+1643,Petrozavodsk,61.85,34.28,Russia,265025
+1651,Graz,47.0778,15.41,Austria,263234
+1673,Tampere,61.5,23.75,Finland,259279
+1685,Dzerzhinsk,56.2504,43.46,Russia,256537
+1691,Rivne,50.6166,26.2528,Ukraine,255106
+1693,Freiburg,48.0004,7.8699,Germany,254889
+1708,Messina,38.2005,15.55,Italy,252026
+1720,Niš,43.3304,21.9,Serbia,250000
+1723,Luzern,47.0504,8.28,Switzerland,250000
+1726,Como,45.81,9.08,Italy,250000
+1727,Caserta,41.06,14.3374,Italy,250000
+1730,Kirovohrad,48.5041,32.2603,Ukraine,249454
+1731,Melun,48.5333,2.6666,France,249432
+1740,Miskolc,48.1004,20.78,Hungary,247757
+1742,Plymouth,50.3854,-4.16,United Kingdom,247297
+1745,Orsk,51.21,58.6273,Russia,246836
+1749,Bratsk,56.157,101.615,Russia,246348
+1754,Rzeszów,50.0705,22.0,Poland,245686
+1758,Nizhenvartovsk,60.935,76.58,Russia,244937
+1759,Ternopil,49.536,25.5821,Ukraine,244768
+1760,Braunschweig,52.25,10.5,Germany,244715
+1769,Angarsk,52.56,103.92,Russia,243158
+1773,Le Havre,49.505,0.105,France,242124
+1777,Novorossiysk,44.73,37.7699,Russia,241856
+1780,Ivano-Frankivsk,48.9348,24.7094,Ukraine,241239
+1788,Fürth,49.47,11.0,Germany,237844
+1790,Århus,56.1572,10.2107,Denmark,237551
+1799,Košice,48.7304,21.25,Slovakia,236563
+1801,Tours,47.3804,0.6999,France,236096
+1804,Luton,51.8804,-0.42,United Kingdom,235958
+1806,Oviedo,43.3505,-5.83,Spain,235651
+1807,Yakutsk,62.035,129.735,Russia,235600
+1808,Lübeck,53.8704,10.67,Germany,235390
+1826,Nizhnekamsk,55.6404,51.82,Russia,234297
+1830,Clermont-Ferrand,45.78,3.08,France,233050
+1832,Kremenchuk,49.0835,33.4296,Ukraine,232742
+1834,Ploiești,44.9469,26.0365,Romania,232542
+1842,Debrecen,47.5305,21.63,Hungary,231286
+1843,Osnabrück,52.2804,8.05,Germany,231268
+1846,Syktyvkar,61.66,50.82,Russia,230910
+1852,Magdeburg,52.1304,11.62,Germany,229826
+1854,Noginsk,55.8704,38.48,Russia,229731
+1855,Noginsk,64.4833,91.2333,Russia,229731
+1869,Starsy Oskol,51.3004,37.84,Russia,226977
+1877,Groznyy,43.3187,45.6987,Russia,226100
+1878,Kolpino,59.73,30.65,Russia,225801
+1881,Novi Sad,45.2504,19.8499,Serbia,225457
+1891,Vitoria,42.85,-2.67,Spain,224578
+1893,Nicosia,35.1667,33.3666,Cyprus,224300
+1910,Shakhty,47.7204,40.27,Russia,221312
+1911,Blagoveshchensk,50.2666,127.5333,Russia,221296
+1913,Babruysk,53.1266,29.1928,Belarus,220517
+1921,Velikiy Novgorod,58.5,31.33,Russia,218717
+1926,Potsdam,52.4004,13.07,Germany,218095
+1930,Orléans,47.9004,1.9,France,217301
+1936,Rybinsk,58.0503,38.82,Russia,216724
+1937,Groningen,53.2204,6.58,Netherlands,216688
+1940,Trieste,45.6504,13.8,Italy,216035
+1941,Kielce,50.8904,20.66,Poland,215733
+1942,Mulhouse,47.7504,7.35,France,215454
+1943,Biysk,52.5341,85.18,Russia,215430
+1948,Split,43.5204,16.47,Croatia,214741
+1950,Oradea,47.05,21.92,Romania,213830
+1951,Lutsk,50.7472,25.3334,Ukraine,213661
+1953,Bergen,60.391,5.3245,Norway,213585
+1954,Brăila,45.292,27.969,Romania,213569
+1970,Rennes,48.1,-1.67,France,209375
+1973,Santander,43.3805,-3.8,Spain,208763
+1990,Salzburg,47.8105,13.04,Austria,206279
+2000,Funchal,32.65,-16.88,Portugal,204767
+2011,Pisa,43.7205,10.4,Italy,203336
+2013,Erfurt,50.9701,11.03,Germany,203254
+2016,Rostock,54.0704,12.15,Germany,203080
+2025,Taranto,40.5084,17.23,Italy,202033
+2027,Pskov,57.83,28.3299,Russia,201990
+2038,Cartagena,37.6004,-0.98,Spain,201274
+2050,Bergamo,45.7004,9.67,Italy,200000
+2053,Bacău,46.5784,26.9196,Romania,199668
+2056,Balakovo,52.03,47.8,Russia,199572
+2057,Armavir,45.0004,41.13,Russia,199548
+2059,Bila Tserkva,49.7743,30.1309,Ukraine,199163
+2080,Reims,49.2504,4.03,France,196565
+2082,Engels,51.5004,46.12,Russia,196011
+2084,Burgas,42.5146,27.4746,Bulgaria,195966
+2090,Severodvinsk,64.57,39.83,Russia,194292
+2100,Oxford,51.7704,-1.25,United Kingdom,192796
+2103,Klaipėda,55.7204,21.1199,Lithuania,192307
+2108,Zlatoust,55.175,59.65,Russia,191366
+2115,Norwich,52.6304,1.3,United Kingdom,190756
+2117,Caen,49.1838,-0.35,France,190099
+2122,Aberdeen,57.1704,-2.08,United Kingdom,189364
+2123,Syzran,53.17,48.48,Russia,189338
+2128,Cork,51.8986,-8.4958,Ireland,188907
+2133,Angers,47.48,-0.53,France,188380
+2138,Szeged,46.2504,20.15,Hungary,187765
+2141,Petropavlovsk Kamchatskiy,53.062,158.623,Russia,187282
+2148,Olsztyn,53.8,20.48,Poland,186670
+2152,Pécs,46.0804,18.22,Hungary,186262
+2154,Marbella,36.5166,-4.8833,Spain,186131
+2163,Mainz,49.9825,8.2732,Germany,184997
+2164,Ruse,43.8537,25.9733,Bulgaria,184270
+2167,Kramatorsk,48.7194,37.5344,Ukraine,184105
+2173,Mataró,41.54,2.45,Spain,183293
+2181,Kamensk Uralskiy,56.4205,61.935,Russia,182500
+2194,Castello,39.9704,-0.05,Spain,180610
+2197,Reggio di Calabria,38.115,15.6414,Italy,180353
+2211,Almería,36.8303,-2.43,Spain,179405
+2230,Treviso,45.67,12.24,Italy,177309
+2236,Nyíregyháza,47.9653,21.7187,Hungary,176880
+2240,Yuzhno Sakhalinsk,46.965,142.74,Russia,176484
+2245,Turku,60.4539,22.255,Finland,175945
+2249,Modena,44.65,10.92,Italy,175502
+2272,Stavanger,58.97,5.68,Norway,173132
+2275,Ulm,48.4004,10.0,Germany,172955
+2286,Kragujevac,44.02,20.92,Serbia,171197
+2287,Pitești,44.8563,24.8758,Romania,171021
+2288,Rijeka,45.33,14.45,Croatia,170992
+2293,Burgos,42.3504,-3.68,Spain,170183
+2297,Čačak,43.8897,20.3301,Serbia,170000
+2298,Dijon,47.3304,5.03,France,169946
+2300,Nîmes,43.8304,4.35,France,169547
+2306,Arad,46.17,21.32,Romania,169065
+2309,Baranavichy,53.1368,26.0134,Belarus,168772
+2311,Würzburg,49.8004,9.95,Germany,168561
+2320,Berezniki,59.42,56.76,Russia,167748
+2321,Volgodonsk,47.51,42.1599,Russia,167731
+2323,Miass,54.9954,60.0949,Russia,167500
+2324,Oldenburg,53.13,8.22,Germany,167458
+2325,Abakan,53.7037,91.445,Russia,167289
+2328,Novocherkassk,47.42,40.08,Russia,166974
+2334,Reykjavík,64.15,-21.95,Iceland,166212
+2338,Parma,44.8104,10.32,Italy,166011
+2341,Norilsk,69.34,88.225,Russia,165873
+2348,Elbasan,41.1215,20.0838,Albania,165010
+2357,Regensburg,49.0204,12.12,Germany,164359
+2363,Patra,38.23,21.73,Greece,163360
+2364,Ingolstadt,48.7704,11.45,Germany,163325
+2372,Lecce,40.3604,18.15,Italy,162582
+2374,Salamanca,40.9704,-5.67,Spain,162353
+2381,Rubtsovsk,51.52,81.21,Russia,161065
+2397,Salavat,53.3703,55.93,Russia,159893
+2400,Nakhodka,42.8374,132.8874,Russia,159551
+2401,Nakhodka,67.7504,77.52,Russia,159551
+2407,York,53.9704,-1.08,United Kingdom,158947
+2411,Maykop,44.61,40.12,Russia,158451
+2414,Odense,55.4004,10.3833,Denmark,158222
+2417,Albacete,39.0003,-1.87,Spain,158094
+2418,Melitopol,46.8378,35.3775,Ukraine,158000
+2428,Ussuriysk,43.8,132.02,Russia,157068
+2430,Tiraspol,46.8531,29.64,Moldova,157000
+2439,Livorno,43.5511,10.3023,Italy,156274
+2445,Shkodër,42.0685,19.5188,Albania,155767
+2447,Sibiu,45.7971,24.1371,Romania,155565
+2449,Barysaw,54.226,28.4922,Belarus,155389
+2451,Innsbruck,47.2804,11.41,Austria,155214
+2452,Foggia,41.4605,15.56,Italy,155203
+2468,Kovrov,56.3604,41.33,Russia,154224
+2473,Lemosos,34.6754,33.0333,Cyprus,154000
+2495,Novokuybishevsk,53.12,49.9199,Russia,152334
+2497,Limoges,45.83,1.25,France,152199
+2506,Dundee,56.4704,-3.0,United Kingdom,151592
+2509,Bălți,47.7591,27.9053,Moldova,151355
+2513,Uzhgorod,48.63,22.25,Ukraine,150832
+2530,Tirgu Mures,46.5582,24.5578,Romania,149433
+2531,Perugia,43.1104,12.39,Italy,149125
+2551,Kolomna,55.08,38.785,Russia,147690
+2557,Trondheim,63.4167,10.4167,Norway,147139
+2561,Aix-en-Provence,43.52,5.45,France,146821
+2569,Perpignan,42.7,2.9,France,146620
+2573,Brugge,51.2204,3.23,Belgium,146469
+2579,Podgorica,42.466,19.2663,Montenegro,145850
+2583,Biarritz,43.4733,-1.5616,France,145348
+2588,Brest,48.3904,-4.495,France,144899
+2591,Le Mans,48.0004,0.1,France,144515
+2597,Székesfehérvár,47.1947,18.4081,Hungary,144319
+2599,Huelva,37.2504,-6.9299,Spain,144174
+2608,Ipswich,52.0703,1.17,United Kingdom,143767
+2609,Logroño,42.4704,-2.43,Spain,143698
+2610,Stara Zagora,42.4231,25.6227,Bulgaria,143431
+2613,Amiens,49.9004,2.3,France,143086
+2619,Pyatigorsk,44.08,43.09,Russia,142865
+2623,Arzamas,55.4,43.8,Russia,142597
+2625,Durrës,41.3178,19.4482,Albania,142432
+2633,Arnhem,51.988,5.923,Netherlands,141674
+2636,Melilla,35.3,-2.95,Spain,141308
+2644,Almetyevsk,54.9004,52.3199,Russia,140437
+2648,Orekhovo-Zuevo,55.82,38.98,Russia,140247
+2651,Peterborough,52.5804,-0.25,United Kingdom,140141
+2652,Badajoz,38.8804,-6.97,Spain,140133
+2659,Göttingen,51.5204,9.92,Germany,139419
+2670,Bremerhaven,53.5504,8.58,Germany,137751
+2675,Iraklio,35.325,25.1305,Greece,137154
+2678,Oulu,65.0,25.47,Finland,136752
+2681,Baia Mare,47.6595,23.5791,Romania,136553
+2682,León,42.58,-5.57,Spain,136227
+2684,Győr,47.7004,17.63,Hungary,136081
+2686,Serpukhov,54.9304,37.43,Russia,135584
+2692,Orsha,54.5153,30.4215,Belarus,135206
+2701,Ravenna,44.4204,12.22,Italy,134631
+2702,'s-Hertogenbosch,51.6833,5.3167,Netherlands,134520
+2703,Nevinnomyssk,44.6201,41.95,Russia,134380
+2708,Pervouralsk,56.91,59.955,Russia,133600
+2710,Šiauliai,55.9386,23.325,Lithuania,133528
+2715,Uppsala,59.8601,17.64,Sweden,133117
+2719,Kislovodsk,43.91,42.72,Russia,132771
+2724,Dimitrovgrad,54.2504,49.56,Russia,132226
+2730,Opole,50.685,17.9313,Poland,131412
+2732,Murom,55.5704,42.04,Russia,131287
+2736,Ferrara,44.8504,11.6099,Italy,130992
+2737,Novomoskovsk,54.09,38.22,Russia,130982
+2738,Buzău,45.1565,26.8065,Romania,130954
+2740,Pinsk,52.1279,26.0941,Belarus,130777
+2744,Nikopol,47.5666,34.4062,Ukraine,130500
+2763,Larissa,39.6304,22.42,Greece,128758
+2765,Kamyshin,50.0804,45.4,Russia,128626
+2767,Cambridge,52.2004,0.1166,United Kingdom,128488
+2769,Besançon,47.23,6.03,France,128426
+2786,Elbląg,54.19,19.4027,Poland,127558
+2787,Panevežys,55.74,24.37,Lithuania,127405
+2796,Neftekamsk,56.0835,54.2631,Russia,126805
+2806,Tarragona,41.1204,1.25,Spain,126291
+2816,Leeuwarden,53.2504,5.7834,Netherlands,125778
+2830,Lysychansk,48.9204,38.4274,Ukraine,124421
+2831,Drohobych,49.3444,23.4994,Ukraine,124269
+2840,Siracusa,37.0704,15.29,Italy,123657
+2852,Maastricht,50.853,5.677,Netherlands,122378
+2855,Aalborg,57.0337,9.9166,Denmark,122219
+2862,Sassari,40.73,8.57,Italy,120729
+2877,Tetovo,42.0092,20.9701,Macedonia,119132
+2879,Udine,46.07,13.24,Italy,119009
+2881,Pleven,43.4238,24.6134,Bulgaria,118675
+2882,Zielona Góra,51.9504,15.5,Poland,118433
+2886,Berdyansk,46.7568,36.7868,Ukraine,118284
+2890,Ourense,42.33,-7.87,Spain,118107
+2892,Setúbal,38.53,-8.9,Portugal,117974
+2898,Achinsk,56.27,90.5,Russia,117634
+2904,Vyborg,60.7039,28.7549,Russia,117201
+2916,Jaén,37.7704,-3.8,Spain,116400
+2917,Nizhyn,51.0541,31.8903,Ukraine,116288
+2921,Cherkessk,44.2904,42.06,Russia,116224
+2926,Yelets,52.58,38.5,Russia,115919
+2945,Botoșani,47.7484,26.6597,Romania,114783
+2946,Kamyanets-Podilskyy,48.6843,26.5809,Ukraine,114658
+2954,Maribor,46.5405,15.65,Slovenia,114228
+2962,Kecskemét,46.9,19.7,Hungary,113895
+2966,Tobolsk,58.1998,68.2648,Russia,113800
+2969,Bærum,59.9135,11.3472,Norway,113659
+2975,Exeter,50.7004,-3.53,United Kingdom,113118
+2981,Nefteyugansk,61.0777,72.7027,Russia,112632
+2984,Satu Mare,47.792,22.885,Romania,112490
+2988,Mazyr,52.046,29.2722,Belarus,112137
+2994,Zwolle,52.524,6.097,Netherlands,111805
+2997,Daugavpils,55.88,26.51,Latvia,111564
+3004,Algeciras,36.1267,-5.4665,Spain,111027
+3011,Volos,39.37,22.95,Greece,110632
+3013,Noyabrsk,63.1665,75.6165,Russia,110572
+3028,Bataysk,47.1368,39.7449,Russia,109962
+3037,Szombathely,47.2253,16.6287,Hungary,109518
+3041,Szolnok,47.1864,20.1794,Hungary,109261
+3042,Sergiyev Posad,56.33,38.17,Russia,109252
+3047,Leninsk Kuznetsky,54.66,86.17,Russia,109023
+3051,Kaposvár,46.367,17.8,Hungary,108528
+3057,Kyzyl,51.7067,94.3831,Russia,108240
+3059,Oktyabrskiy,54.46,53.46,Russia,108200
+3063,Barletta,41.32,16.27,Italy,107830
+3064,Trento,46.0804,11.12,Italy,107808
+3069,Rimnicu Vilcea,45.11,24.383,Romania,107558
+3070,Koszalin,54.2,16.1833,Poland,107450
+3071,Obninsk,55.0804,36.62,Russia,107392
+3073,Luxembourg,49.6117,6.13,Luxembourg,107260
+3075,Västerås,59.63,16.54,Sweden,107194
+3076,Chapayevsk,52.9743,49.7243,Russia,107164
+3085,Elista,46.3287,44.2087,Russia,106971
+3088,Kandalaksha,67.1643,32.4144,Russia,106798
+3091,Coimbra,40.2004,-8.4167,Portugal,106582
+3092,Drobeta-Turnu Severin,44.6459,22.6659,Romania,106578
+3094,Namur,50.4704,4.87,Belgium,106284
+3097,Novotroitsk,51.2,58.33,Russia,106186
+3103,Derbent,42.0578,48.2774,Russia,105965
+3104,Suceava,47.6377,26.2593,Romania,105796
+3105,Annecy,45.9,6.1167,France,105749
+3113,Lugano,46.0004,8.9667,Switzerland,105388
+3120,Focșani,45.6966,27.1865,Romania,105112
+3122,Cottbus,51.7704,14.33,Germany,105067
+3128,Jena,50.9304,11.58,Germany,104712
+3129,Gera,50.8704,12.07,Germany,104659
+3132,Brindisi,40.6403,17.93,Italy,104437
+3142,Kiselevsk,54.0,86.64,Russia,104000
+3152,Konotop,51.2424,33.209,Ukraine,103547
+3159,Velikiye Luki,56.32,30.52,Russia,103149
+3164,Piatra-Neamt,46.94,26.383,Romania,102688
+3165,Grudziądz,53.4804,18.75,Poland,102443
+3168,Ukhta,63.56,53.69,Russia,102187
+3179,Kansk,56.19,95.71,Russia,101502
+3181,Sarapul,56.4791,53.7987,Russia,101344
+3182,Maladzyechna,54.3188,26.8653,Belarus,101300
+3189,Tartu,58.3839,26.7099,Estonia,101092
+3190,Novara,45.45,8.62,Italy,100910
+3194,Solikamsk,59.67,56.75,Russia,100812
+3198,Glazov,58.1232,52.6288,Russia,100676
+3199,Ancona,43.6004,13.4999,Italy,100507
+3204,Ust-Ulimsk,57.99,102.6333,Russia,100271
+3206,Lida,53.8885,25.2846,Belarus,100216
+3209,Subotica,46.07,19.68,Serbia,100000
+3219,Zelenodolsk,55.8406,48.655,Russia,99600
+3221,Novoshakhtinsk,47.77,39.92,Russia,99478
+3229,Tuapse,44.1148,39.0644,Russia,99145
+3234,Lahti,60.9939,25.6649,Finland,98826
+3239,Votkinsk,57.0304,53.99,Russia,98633
+3240,Örebro,59.2803,15.22,Sweden,98573
+3241,Serov,59.615,60.585,Russia,98438
+3244,Jyväskylä,62.2603,25.75,Finland,98136
+3245,Balashov,51.5535,43.1631,Russia,98107
+3247,Flensburg,54.7837,9.4333,Germany,97930
+3248,Zheleznogorsk,52.3548,35.4044,Russia,97900
+3256,Slavonski Brod,45.1603,18.0156,Croatia,97718
+3270,Târgu Jiu,45.045,23.274,Romania,97179
+3274,Shostka,51.8734,33.4797,Ukraine,96825
+3277,Linköping,58.41,15.6299,Sweden,96732
+3279,Schwerin,53.6333,11.4167,Germany,96641
+3286,Sliven,42.6794,26.33,Bulgaria,96368
+3295,Bolzano,46.5004,11.36,Italy,95895
+3298,Kuznetsk,53.1204,46.6,Russia,95574
+3302,Magadan,59.575,150.81,Russia,95282
+3304,Catanzaro,38.9004,16.6,Italy,95251
+3307,Osijek,45.5504,18.68,Croatia,95077
+3312,Dobrich,43.5851,27.84,Bulgaria,94831
+3318,Prešov,48.9997,21.2394,Slovakia,94718
+3325,Novy Urengoy,66.0833,76.6332,Russia,94212
+3339,Michurinsk,52.9,40.5,Russia,93499
+3341,Nazran,43.233,44.783,Russia,93357
+3345,Bath,51.3837,-2.35,United Kingdom,93238
+3350,Kineshma,57.47,42.13,Russia,92983
+3353,Rosenheim,47.8503,12.1333,Germany,92809
+3363,Tulcea,45.1993,28.7967,Romania,92475
+3367,Santiago de Compostela,42.8829,-8.5411,Spain,92430
+3374,Calais,50.9504,1.8333,France,92201
+3383,Bugulma,54.5543,52.7943,Russia,91900
+3384,Kuopio,62.8943,27.6949,Finland,91900
+3388,Arezzo,43.4617,11.875,Italy,91589
+3391,Novoaltaysk,53.3993,83.9588,Russia,91386
+3395,Helsingborg,56.0505,12.7,Sweden,91304
+3396,Mons,50.446,3.939,Belgium,91277
+3405,Drammen,59.7572,10.1907,Norway,90722
+3407,Klagenfurt,46.6203,14.31,Austria,90610
+3413,Gatchina,59.5707,30.1333,Russia,90486
+3417,Kirovo-Chepetsk,58.5544,50.0444,Russia,90252
+3424,Limerick,52.6647,-8.6231,Ireland,90054
+3427,Yegoryevsk,55.3848,39.0294,Russia,89795
+3428,Jönköping,57.7713,14.165,Sweden,89780
+3431,Vlorë,40.4774,19.4982,Albania,89546
+3432,Chester,53.2,-2.92,United Kingdom,89531
+3448,Norrköping,58.5954,16.1787,Sweden,88639
+3453,Brovary,50.4943,30.7809,Ukraine,88506
+3455,Târgoviște,44.938,25.459,Romania,88435
+3473,Yeysk,46.6988,38.2634,Russia,87814
+3478,Buzuluk,52.7821,52.2618,Russia,87714
+3480,Uman,48.7543,30.2109,Ukraine,87658
+3482,Žilina,49.2198,18.7494,Slovakia,87625
+3489,Shumen,43.27,26.9294,Bulgaria,87283
+3504,Bitola,41.0391,21.3395,Macedonia,86528
+3507,Ioanina,39.6679,20.8509,Greece,86304
+3511,Lorca,37.6886,-1.6985,Spain,86119
+3512,Shchekino,54.0143,37.5143,Russia,86088
+3517,Poitier,46.5833,0.3333,France,85960
+3519,Usolye Sibirskoye,52.765,103.645,Russia,85900
+3526,Versailles,48.8005,2.1333,France,85416
+3531,Liepaga,56.51,21.01,Latvia,85132
+3536,Lorient,47.7504,-3.3666,France,84952
+3549,Yurga,55.7258,84.8854,Russia,84220
+3555,Anzhero Sudzhensk,56.08,86.04,Russia,83692
+3557,Londonderry,55.0004,-7.3333,United Kingdom,83652
+3563,Reșița,45.297,21.8865,Romania,83324
+3567,Izmayil,45.3503,28.8374,Ukraine,83194
+3573,Wiener Neustadt,47.816,16.25,Austria,82762
+3578,Pernik,42.61,23.0227,Bulgaria,82467
+3584,Gießen,50.5837,8.65,Germany,82358
+3585,Troitsk,54.1056,61.5702,Russia,82338
+3586,Banská Bystrica,48.7333,19.15,Slovakia,82336
+3589,Fier,40.73,19.573,Albania,82297
+3590,Polatsk,55.4894,28.786,Belarus,82258
+3600,Kaspiysk,42.8747,47.6244,Russia,81752
+3608,Béziers,43.3505,3.21,France,81438
+3612,Bistrița,47.138,24.513,Romania,81318
+3614,Asbest,57.023,61.458,Russia,81248
+3630,Klin,56.3431,36.6987,Russia,80778
+3649,Vorkuta,67.5,64.01,Russia,80039
+3659,Khaskovo,41.9438,25.5633,Bulgaria,79699
+3662,Kropotkin,45.4471,40.5821,Russia,79599
+3668,Shadrinsk,56.0837,63.6333,Russia,79479
+3678,Inowrocław,52.7799,18.25,Poland,79007
+3679,Slatina,44.435,24.371,Romania,78988
+3680,Kupyansk,49.7218,37.5981,Ukraine,78870
+3683,Hania,35.5122,24.0156,Greece,78728
+3686,Biel,47.1666,7.25,Switzerland,78708
+3688,Ceuta,35.889,-5.307,Spain,78674
+3696,Umeå,63.83,20.24,Sweden,78197
+3706,Marsala,37.8054,12.4387,Italy,77784
+3727,La Rochelle,46.1667,-1.15,France,76997
+3733,Pori,61.4789,21.7749,Finland,76772
+3755,Birobidzhan,48.7974,132.9508,Russia,76146
+3764,Kamensk Shakhtinskiy,48.3318,40.2518,Russia,75814
+3765,Buynaksk,42.8335,47.113,Russia,75800
+3769,Galway,53.2724,-9.0488,Ireland,75594
+3774,Agrinio,38.6218,21.4077,Greece,75233
+3786,Greenock,55.9333,-4.75,United Kingdom,74635
+3787,Toledo,39.867,-4.0167,Spain,74632
+3796,Karlstad,59.3671,13.4999,Sweden,74141
+3814,Sundsvall,62.4001,17.3167,Sweden,73389
+3818,Skien,59.2,9.6,Norway,73330
+3819,Roanne,46.0333,4.0667,France,73315
+3822,Călărași,44.2063,27.3259,Romania,73224
+3831,Korosten,50.9504,28.65,Ukraine,72984
+3836,Guadalajara,40.6337,-3.1666,Spain,72850
+3840,Georgievsk,44.1599,43.4699,Russia,72649
+3842,Carlisle,54.88,-2.93,United Kingdom,72633
+3850,Bourges,47.0837,2.4,France,72340
+3854,Esbjerg,55.467,8.45,Denmark,72205
+3857,Chusovoy,58.2934,57.813,Russia,72113
+3862,Chalkida,38.464,23.6124,Greece,71842
+3863,Kalamata,37.0389,22.1142,Greece,71823
+3865,Vratsa,43.21,23.5625,Bulgaria,71633
+3867,Chernogorsk,53.8313,91.2227,Russia,71582
+3876,Kovel,51.2171,24.7166,Ukraine,71301
+3878,Asti,44.93,8.21,Italy,71276
+3879,Zadar,44.1201,15.2623,Croatia,71258
+3902,Saint Gallen,47.423,9.362,Switzerland,70572
+3903,Scarborough,54.2804,-0.43,United Kingdom,70571
+3904,Tatabánya,47.55,18.433,Hungary,70541
+3906,Volsk,52.0347,47.3743,Russia,70500
+3915,Belogorsk,50.9191,128.4637,Russia,70203
+3924,Trnava,48.3666,17.6,Slovakia,69785
+3941,Vaslui,46.6333,27.7333,Romania,69225
+3942,Hasselt,50.964,5.484,Belgium,69222
+3946,Giurgiu,43.93,25.84,Romania,69067
+3948,Potenza,40.642,15.799,Italy,69060
+3949,Ayr,55.4504,-4.6167,United Kingdom,69042
+3952,Ragusa,36.93,14.73,Italy,68956
+3959,Tuymazy,54.6048,53.6943,Russia,68829
+3969,Gävle,60.667,17.1666,Sweden,68635
+3970,Borisoglebsk,51.3687,42.0887,Russia,68597
+3974,L'Aquila,42.3504,13.39,Italy,68503
+3997,Deva,45.8833,22.9167,Romania,67802
+3998,Khanty Mansiysk,61.0015,69.0015,Russia,67800
+3999,Ishim,56.1502,69.4498,Russia,67762
+4011,Oktyabrskiy,52.6636,156.2387,Russia,67386
+4018,Jelgava,56.6527,23.7128,Latvia,67207
+4027,Narva,59.3776,28.1603,Estonia,66980
+4028,Apatity,67.5731,33.393,Russia,66907
+4030,Aleksin,54.5143,37.0944,Russia,66885
+4041,Kungur,57.4348,56.9543,Russia,66389
+4042,Klintsy,52.7652,32.2448,Russia,66336
+4044,Neryungri,56.674,124.7104,Russia,66320
+4047,Leninogorsk,54.5987,52.4487,Russia,66263
+4051,Alba Lulia,46.077,23.58,Romania,66085
+4053,Lesosibirsk,58.2433,92.4833,Russia,65945
+4059,Polevskoy,56.4434,60.188,Russia,65770
+4075,Kumertau,52.7748,55.7843,Russia,65321
+4079,Békéscsaba,46.672,21.101,Hungary,65206
+4083,Borås,57.7304,12.92,Sweden,65008
+4087,Krasnoturinsk,59.7948,60.4848,Russia,64878
+4106,Tikhoretsk,45.8531,40.1377,Russia,64387
+4112,Arras,50.2833,2.7833,France,64165
+4114,Zrenjanin,45.3786,20.3995,Serbia,64053
+4122,Kristiansand,58.1666,8.0,Norway,63814
+4128,Svobodnyy,51.4062,128.1312,Russia,63620
+4136,Rzhev,56.2574,34.3275,Russia,63414
+4137,Cahul,45.9079,28.1944,Moldova,63407
+4141,Zalău,47.175,23.063,Romania,63232
+4150,Balakhna,56.4943,43.5944,Russia,63083
+4169,Belebey,54.1291,54.1187,Russia,62582
+4183,Assen,53.0,6.55,Netherlands,62237
+4185,Chistopol,55.3648,50.6407,Russia,62200
+4188,Tikhvin,59.6448,33.5144,Russia,62075
+4192,Veszprém,47.091,17.911,Hungary,62023
+4194,Labinsk,44.6348,40.7443,Russia,61945
+4198,Zalaegerszeg,46.844,16.84,Hungary,61898
+4203,Iskitim,54.6509,83.2865,Russia,61827
+4205,Benevento,41.1337,14.75,Italy,61791
+4208,Troyes,48.3404,4.0834,France,61703
+4209,Vyska,55.3247,42.1644,Russia,61664
+4211,Pula,44.8687,13.8481,Croatia,61599
+4212,Sibay,52.7091,58.6387,Russia,61590
+4214,Ponta Delgada,37.7483,-25.6666,Portugal,61526
+4218,Stralsund,54.3004,13.1,Germany,61368
+4220,Civitavecchia,42.1004,11.8,Italy,61316
+4223,Portimão,37.1337,-8.5333,Portugal,61226
+4226,Coburg,50.2666,10.9666,Germany,61054
+4231,Salsk,46.4775,41.542,Russia,61000
+4232,Cherbourg,49.6504,-1.65,France,60991
+4244,Shuya,56.8543,41.3643,Russia,60705
+4245,Sfintu-Gheorghe,45.868,25.793,Romania,60677
+4254,Zima,53.9331,102.0331,Russia,60239
+4264,Crotone,39.0833,17.1233,Italy,60010
+4270,Kotlas,61.2631,46.6631,Russia,59879
+4271,Gorno Altaysk,51.9613,85.9577,Russia,59868
+4275,Linares,38.0833,-3.6334,Spain,59761
+4281,Växjö,56.8837,14.8167,Sweden,59600
+4291,Lappeenranta,61.0671,28.1833,Finland,59276
+4292,Kavala,40.9412,24.4018,Greece,59240
+4308,Mikhaylovka,50.0679,43.2175,Russia,58898
+4309,Solnechnogorsk,56.1807,36.9809,Russia,58891
+4320,Arsenyev,44.1623,133.2823,Russia,58700
+4330,Korçë,40.6167,20.7667,Albania,58259
+4333,Agen,44.2004,0.6333,France,58223
+4342,Borovichi,58.3978,33.8974,Russia,57887
+4360,Cheremkhovo,53.1588,103.0739,Russia,57395
+4375,Vaasa,63.1,21.6,Finland,57014
+4376,Roslavl,53.9509,32.8604,Russia,56971
+4377,Rodos,36.4412,28.2225,Greece,56969
+4390,Eger,47.895,20.383,Hungary,56647
+4408,Hof,50.317,11.9167,Germany,56153
+4411,Nizhnyaya Tura,58.6436,59.7983,Russia,56084
+4417,Seres,41.086,23.5497,Greece,55886
+4422,Ełk,53.8337,22.35,Poland,55769
+4427,Halmstad,56.6718,12.8556,Sweden,55657
+4429,Sayanogorsk,53.0894,91.4004,Russia,55642
+4430,Évora,38.56,-7.906,Portugal,55620
+4434,Gelendzhik,44.5748,38.0644,Russia,55508
+4435,Vyazma,55.2122,34.2918,Russia,55500
+4438,Brive,45.1504,1.5333,France,55448
+4458,Karlovac,45.4872,15.5478,Croatia,55063
+4465,Tarbes,43.2333,0.0833,France,54854
+4485,Ajaccio,41.9271,8.7283,France,54364
+4486,Krasnokamensk,50.0665,118.0265,Russia,54316
+4496,Aveiro,40.641,-8.651,Portugal,54162
+4497,Illichivsk,46.3,30.6666,Ukraine,54102
+4501,Andorra,42.5,1.5165,Andorra,53998
+4510,Severomorsk,69.0731,33.4231,Russia,53921
+4514,Vyshnniy Volochek,57.583,34.5631,Russia,53800
+4527,Buguruslan,53.663,52.433,Russia,53511
+4534,Joensuu,62.6,29.7666,Finland,53388
+4537,Katerini,40.2723,22.5025,Greece,53293
+4539,St.-Brieuc,48.5167,-2.7833,France,53223
+4545,Turnovo,43.0862,25.6555,Bulgaria,53115
+4549,Alexandroupoli,40.8486,25.8744,Greece,52979
+4552,Arrecife,28.969,-13.5378,Spain,52944
+4555,Livny,52.4248,37.6044,Russia,52915
+4561,Slobozia,44.57,27.382,Romania,52693
+4562,Krasnokamsk,58.0747,55.7443,Russia,52689
+4563,Siena,43.317,11.35,Italy,52625
+4574,Tromsø,69.6351,18.992,Norway,52436
+4576,Mérida,38.912,-6.338,Spain,52423
+4586,Tayshet,55.9277,97.9877,Russia,52184
+4588,Nyagan,62.1465,65.3814,Russia,52137
+4589,Kimry,56.8691,37.3444,Russia,52070
+4604,Emden,53.3667,7.2167,Germany,51526
+4611,Tulun,54.5653,100.5654,Russia,51330
+4614,Vejle,55.709,9.535,Denmark,51177
+4619,Kyustendil,42.2843,22.6911,Bulgaria,51067
+4622,Kyshtym,55.7,60.5595,Russia,50911
+4624,Campobasso,41.563,14.656,Italy,50762
+4630,Xanthi,41.1418,24.8836,Greece,50570
+4631,Passau,48.567,13.4666,Germany,50560
+4651,Otradnyy,53.3778,51.3474,Russia,50127
