@@ -2,6 +2,13 @@ from datetime import datetime
 from airflow import DAG
 from airflow.providers.ssh.operators.ssh import SSHOperator
 from config import default_args
+from datetime import timedelta
+
+default_args = {
+    'owner': 'Bojan Radovic',
+    'retries': 3,
+    'retry_delay': timedelta(minutes=2)
+}
 
 with DAG(
     dag_id='hourly-pollutant-cities-rank-by-max-pollutant-concetration',
