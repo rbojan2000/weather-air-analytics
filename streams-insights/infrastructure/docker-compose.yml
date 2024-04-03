@@ -67,6 +67,17 @@ services:
     networks:
       - streams_nw
 
+  weather-air-analytics_streams-insights_air-quality-analyzer:
+    image: rbojan2000/air-quality-analyzer
+    command: "bash -c 'echo Waiting for Kafka to be ready... && until nc -z schema-registry 8081; do sleep 1; done  && java -jar target/scala-2.13/air-quality-analyzer-0.1.0-SNAPSHOT.jar'" 
+    depends_on:
+      - broker
+      - weather-air-analytics_streams-insights_producer_cities
+      - weather-air-analytics_streams-insights_producer_air-quality
+      - schema-registry
+    networks:
+      - streams_nw
+
 networks:
   streams_nw:
     driver: bridge
