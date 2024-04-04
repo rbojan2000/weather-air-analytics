@@ -18,7 +18,7 @@
       }
     ]
   },
-  "description": "This dashboard provides real-time visualization of the Air Quality Index (AQI) across European cities with populations exceeding 50,000. It offers insights into the concentrations of PM10, PM2.5, CO2, and NO pollutants in the air for these same cities. S",
+  "description": "This dashboard provides real-time visualization of the Air Quality Index (AQI) across European cities with populations exceeding 50,000. It offers insights into the concentrations of PM10, PM2.5, CO2, and NO pollutants in the air for these same cities.",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
