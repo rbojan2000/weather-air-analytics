@@ -12,8 +12,8 @@ class MeteoFetcher(Fetcher):
     def get_data(self, latitude: str, longitude: str, params: list, start_date: str,
                  end_date: str, timezone: str, api: str) -> pd.DataFrame:
         params = {
-            "latitude": 52.52,
-            "longitude": 13.41,
+            "latitude": latitude,
+            "longitude": longitude,
             "start_date": start_date,
             "end_date": end_date,
             "daily": params,

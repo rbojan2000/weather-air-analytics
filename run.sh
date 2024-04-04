@@ -35,7 +35,16 @@ elif [ "$1" == "--visualization" ]; then
         echo "Usage: ./run.sh --visualization --start/--stop"
     fi
 
+elif [ "$1" == "--stop-all" ]; then
+        docker compose -f streams-insights/infrastructure/docker-compose.yml stop
+        docker compose -f visualization/infrastructure/docker-compose.yml stop
+        docker compose -f orchestrator/docker-compose.yaml stop
+        docker compose -f etl/infrastructure/docker-compose.yml stop
+    
 else
     echo "Invalid argument provided"
     echo "Usage: ./run.sh --streams/--batch/--visualization --start/--stop"
+    echo "--------------------------------------"
+    echo "Stop all Docker containers"
+    echo "./run.sh --stop-all"    
 fi

@@ -4,11 +4,12 @@
 
 - The ETL module adheres to the medallion Data Lakehouse architecture, ensuring robustness, scalability, and reliability in data processing.
 
-1. [Ingestion](/etl/ingestion/README.md) is the initial step where raw data is sourced from [open-meteo](https://open-meteo.com/) API, and stored in the bronze layer.
+1. [Ingestion](/etl/ingestion/README.md) is the initial step where raw data is sourced from [open-meteo](https://open-meteo.com/) API, and stored in the ${{\color{Darkorange}\{\textsf{bronze layer}}}}\$.
 
-2. [Transformation](/etl/transformation/README.md) cleaning, transformation, and conversion raw data into Delta Tables. This phase ensures that the data is standardized, cleansed of inconsistencies, and formatted for analysis. The transformed data, ready for analysis and metric calculation, is stored in the silver layer.
 
-3. [Load](/etl/load/README.md) phase completes the ETL process by reading data from the silver layer, performing calculations, and writing the results to the gold layer. This final step includes computing various metrics, correlations, air quality indices, weather forecasts, and their interrelations.
+2. [Transformation](/etl/transformation/README.md) performs cleaning, transformation, and conversion of raw data into Delta Tables. This phase ensures that the data is standardized, cleansed of inconsistencies, and formatted for analysis. The transformed data, ready for analysis and metric calculation, is stored in the ${{\color{Silver}\{\textsf{silver layer}}}}\$.
+
+3. [Load](/etl/load/README.md) phase completes the ETL process by reading data from the ${{\color{Silver}\{\textsf{silver layer}}}}\$, performing calculations, and writing the results to the ${{\color{Gold}\{\textsf{gold layer}}}}\$. This final step includes computing various metrics, correlations, air quality indices, weather forecasts, and their interrelations.
 
 <br>
 

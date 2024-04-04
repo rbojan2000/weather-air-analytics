@@ -1,13 +1,14 @@
 # Weather Air Analytics
 
-Comprehensive platform designed for in-depth analysis of both quality and weather data. It comprises various modules dedicated to different aspects of data analysis, including real-time processing, batch processing, and historical data retrieval.
+Comprehensive platform designed for in-depth analysis of both air quality and weather data. It comprises various modules dedicated to different aspects of data analysis, including real-time processing, batch processing, and historical data retrieval.
 
 <br>
 
 ## Architecture
 - <i> Diagram 1.1 </i> illustrates the overall structure of the project. It shows how different modules interact with each other to facilitate data processing and analysis.
 
-![architecture](/docs/architecture-diagram.png)
+<!-- ![architecture](/docs/architecture-diagram.png) -->
+[![](/docs/architecture-diagram.png)](/docs/architecture-diagram.png)
 <p align="center"> <i>Diagram 1.1</i></p>
 
 <br>
