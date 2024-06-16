@@ -8,7 +8,7 @@ Comprehensive platform designed for in-depth analysis of both air quality and we
 - <i> Diagram 1.1 </i> illustrates the overall structure of the project. It shows how different modules interact with each other to facilitate data processing and analysis.
 
 <!-- ![architecture](/docs/architecture-diagram.png) -->
-[![](/docs/architecture-diagram.png)](/docs/architecture-diagram.png)
+[![](/docs/solution-architecture-diagram.png)](/docs/solution-architecture-diagram.png)
 <p align="center"> <i>Diagram 1.1</i></p>
 
 <br>
