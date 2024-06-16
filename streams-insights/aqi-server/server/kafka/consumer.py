@@ -67,9 +67,9 @@ class KafkaConsumer:
                 self.city_aqi_deserializer = self._init_deserializer(
                     CITY_AIR_POLLUTANT_TOPIC, "air_quality_with_pollution_level"
                 )
-            # elif topic == CITY_AIR_POLLUTANT_TOPIC:
+            # elif topic == COUNTRY_METRICS_TOPIC:
             #     self.city_air_pollutant_deserializer = self._init_deserializer(
-            #         CITY_AIR_POLLUTANT_TOPIC, "city_aqi_info"
+            #         COUNTRY_METRICS_TOPIC, "country_air_quality_metrics"
             #     )
             else:
                 raise UnsupportedDeserializerException(
@@ -106,9 +106,8 @@ class KafkaConsumer:
                         if message.topic() == CITY_AIR_POLLUTANT_TOPIC:
                             data = self._process_city_aqi_message(message)
                             city_aqi.append(data)
-                        # elif message.topic() == CITY_AIR_POLLUTANT_TOPIC:
-                        #     data = self._process_flight_message(message)
-                        #     city_aqi.append(data)
+                        # elif message.topic() == COUNTRY_METRICS_TOPIC:
+                        #     data = self._process_country_kpi_message(message)
                         else:
                             logger.warning(
                                 f"Unsupported message from topic {message.topic()}. Skipping."
