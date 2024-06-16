@@ -7,7 +7,7 @@ services:
       - ${GRAFANA_PORT}:3000
     volumes:
       - grafana-storage:/var/lib/grafana:rw
-      - ../aqi-server/data:/data
+      - ../../streams-insights/aqi-server/data:/data
       - ../grafana/city-aqi-dashboard.json:/var/lib/grafana/dashboards/city-aqi-dashboard.json
     environment:
       - GF_INSTALL_PLUGINS=marcusolsson-csv-datasource
@@ -19,7 +19,7 @@ services:
     image: rbojan2000/aqi-server:0.1.0
     container_name: aqi-server
     volumes:
-      - ../aqi-server/data:/opt/aqi-server/data
+      - ../../streams-insights/aqi-server/data:/opt/aqi-server/data
     networks:
       - streams_nw
 
