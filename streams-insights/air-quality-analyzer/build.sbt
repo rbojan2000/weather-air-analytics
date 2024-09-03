@@ -15,7 +15,9 @@ lazy val root = (project in file("."))
       Libs.kafkaStreamsAvro,
       Libs.scalaLogging,
       Libs.configTypesafe,
-      Libs.logback
+      Libs.logback,
+      Libs.scalaTest,
+      Libs.mockito
     ),
     assembly / assemblyMergeStrategy := {
       case PathList("META-INF", xs@_*) =>

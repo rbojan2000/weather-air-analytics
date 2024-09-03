@@ -18,11 +18,11 @@ trait CountryAirQualityMetricsAggregator {
     )
   }
 
-  private def getDominantPollutantInCountry(metric: CountryAirQualityMetrics): String = {
+  protected def getDominantPollutantInCountry(metric: CountryAirQualityMetrics): String = {
     metric.dominantPollutantCounts.maxByOption(_._2).map(_._1).getOrElse("")
   }
 
-  private def updateDominantPollutantCounts(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): Map[String, Int] = {
+  protected def updateDominantPollutantCounts(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): Map[String, Int] = {
     val dominantPollutant = cityAqiInfo.dominentPol
     val updatedCounts = metric.dominantPollutantCounts.updatedWith(dominantPollutant) {
       case Some(count) => Some(count + 1)
@@ -37,7 +37,7 @@ trait CountryAirQualityMetricsAggregator {
   }
 
 
-  private def calcNumberOfCitiesWithUnhealthyPollutantLevel(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): Int = {
+  protected def calcNumberOfCitiesWithUnhealthyPollutantLevel(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): Int = {
     if (cityAqiInfo.airPollutantLevel == AirPollutionLevel.Unhealthy.toString ||
       cityAqiInfo.airPollutantLevel == AirPollutionLevel.VeryUnhealthy.toString) {
       metric.numberOfCitiesWithUnhealthyPollutantLevel = metric.numberOfCitiesWithUnhealthyPollutantLevel + 1
@@ -47,7 +47,7 @@ trait CountryAirQualityMetricsAggregator {
     }
   }
 
-  private def calcNumberOfCitiesWithHazardousAirPollutantLevel(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): Int = {
+  protected def calcNumberOfCitiesWithHazardousAirPollutantLevel(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): Int = {
     if (cityAqiInfo.airPollutantLevel == AirPollutionLevel.Hazardous.toString) {
       metric.numberOfCitiesWithHazardousAirPollutantLevel = metric.numberOfCitiesWithHazardousAirPollutantLevel + 1
       metric.numberOfCitiesWithHazardousAirPollutantLevel
@@ -56,7 +56,7 @@ trait CountryAirQualityMetricsAggregator {
     }
   }
 
-  private def calcCityWithHighestAqi(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): CityMetric = {
+  protected def calcCityWithHighestAqi(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): CityMetric = {
     if (cityAqiInfo.aqiValue.isDefined && cityAqiInfo.aqiValue.get > metric.cityWithHighestAqi.value) {
       CityMetric(
         cityName = cityAqiInfo.name,
@@ -69,7 +69,7 @@ trait CountryAirQualityMetricsAggregator {
     }
   }
 
-  private def calcCityWithHighestPM10(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): CityMetric = {
+  protected def calcCityWithHighestPM10(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): CityMetric = {
     if (cityAqiInfo.pm10.isDefined && cityAqiInfo.pm10.get > metric.cityWithHighestPM10.value) {
       CityMetric(
         cityName = cityAqiInfo.name,
@@ -82,7 +82,7 @@ trait CountryAirQualityMetricsAggregator {
     }
   }
 
-  private def calcCityWithHighestPM25(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): CityMetric = {
+  protected def calcCityWithHighestPM25(cityAqiInfo: CityAqiInfo, metric: CountryAirQualityMetrics): CityMetric = {
     if (cityAqiInfo.pm25.isDefined && cityAqiInfo.pm25.get > metric.cityWithHighestPM25.value) {
       CityMetric(
         cityName = cityAqiInfo.name,
