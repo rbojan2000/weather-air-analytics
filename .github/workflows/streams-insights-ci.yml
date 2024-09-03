@@ -21,5 +21,4 @@ jobs:
     - name: Run tests
       run: |
         cd streams-insights/air-quality-analyzer
-        ls
         sbt test
